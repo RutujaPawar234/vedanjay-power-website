@@ -1,0 +1,8 @@
+# Cloudflare Workers — static assets (SPA) deploy of the Vite build.
+# `npx wrangler deploy` serves ./dist with client-side routing fallback.
+name = "vedanjay-power-website"
+compatibility_date = "2024-11-01"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
