@@ -197,3 +197,60 @@
   .context-caps { grid-template-columns: 1fr; }
   .record-services { grid-template-columns: 1fr; }
 }
+
+/* ---------------------------------------------------------------
+   RENEWABLE PORTFOLIO (QCA/F&S) — totals, state filter, table
+--------------------------------------------------------------- */
+.pf-totals {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  max-width: 640px; margin: 2rem auto 1.6rem;
+}
+.pf-total {
+  text-align: center; background: #fff; border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius); padding: 1.1rem 0.6rem; box-shadow: var(--vp-shadow-sm);
+}
+.pf-total__value { display: block; font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 700; color: var(--vp-green-700); line-height: 1; }
+.pf-total__unit { font-size: 0.55em; }
+.pf-total__label { display: block; margin-top: 0.4rem; font-size: 0.82rem; color: var(--vp-muted); }
+
+.pf-states { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.4rem; }
+.pf-state {
+  display: inline-flex; flex-direction: column; align-items: flex-start;
+  background: #fff; border: 1.5px solid var(--vp-line); border-radius: 12px;
+  padding: 0.5rem 0.85rem; cursor: pointer; font-family: inherit; text-align: left;
+  transition: border-color 0.2s var(--vp-ease), transform 0.2s var(--vp-ease), background 0.2s var(--vp-ease);
+}
+.pf-state:hover { transform: translateY(-2px); border-color: var(--vp-teal-300); }
+.pf-state.is-active { background: var(--vp-grad-green); border-color: transparent; }
+.pf-state.is-active .pf-state__name, .pf-state.is-active .pf-state__meta { color: #fff; }
+.pf-state__name { font-weight: 700; font-size: 0.94rem; color: var(--vp-ink); }
+.pf-state__meta { font-size: 0.76rem; color: var(--vp-muted); }
+
+.pf-table-wrap { overflow-x: auto; border-radius: var(--vp-radius); border: 1px solid var(--vp-line); background: #fff; box-shadow: var(--vp-shadow-sm); }
+.pf-table { width: 100%; border-collapse: collapse; font-size: 0.96rem; min-width: 560px; }
+.pf-table thead th { background: var(--vp-mist); color: var(--vp-green-800); text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; letter-spacing: 0.4px; text-transform: uppercase; }
+.pf-table td { padding: 0.72rem 1rem; border-top: 1px solid var(--vp-line); color: var(--vp-ink); }
+.pf-table tbody tr:hover { background: var(--vp-off-white); }
+.pf-table .pf-num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+.pf-tech { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--vp-ink-soft); }
+.pf-tech i { color: var(--vp-green-600); }
+.pf-note { margin-top: 1rem; font-size: 0.85rem; color: var(--vp-muted); font-style: italic; text-align: center; }
+
+:root[data-theme="dark"] .pf-total,
+:root[data-theme="dark"] .pf-state,
+:root[data-theme="dark"] .pf-table-wrap { background: var(--vp-surface); border-color: var(--vp-line); }
+:root[data-theme="dark"] .pf-state__name, :root[data-theme="dark"] .pf-table td { color: var(--vp-ink); }
+:root[data-theme="dark"] .pf-table tbody tr:hover { background: var(--vp-off-white); }
+
+/* Mobile: turn table rows into stacked cards */
+@media (max-width: 640px) {
+  .pf-totals { grid-template-columns: 1fr; max-width: 320px; }
+  .pf-table-wrap { overflow-x: visible; border: none; box-shadow: none; background: transparent; }
+  .pf-table { min-width: 0; }
+  .pf-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .pf-table tr { display: block; background: #fff; border: 1px solid var(--vp-line); border-radius: var(--vp-radius); margin-bottom: 0.7rem; padding: 0.3rem 0.2rem; }
+  .pf-table td { display: flex; justify-content: space-between; gap: 1rem; border-top: none; padding: 0.4rem 0.9rem; }
+  .pf-table td::before { content: attr(data-label); font-weight: 700; color: var(--vp-muted); font-size: 0.82rem; }
+  .pf-table .pf-num { text-align: right; }
+  :root[data-theme="dark"] .pf-table tr { background: var(--vp-surface); }
+}
