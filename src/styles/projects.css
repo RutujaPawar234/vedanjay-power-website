@@ -1,0 +1,199 @@
+/* ============================================================
+   Vedanjay Power — Project Portfolio page styles
+   Reuses tokens/buttons (index.css), sections/cards (home.css),
+   hero/visual/breadcrumb (about.css).
+   ============================================================ */
+
+/* ---------------- Portfolio overview strip ---------------- */
+.portfolio-strip {
+  list-style: none; padding: 0; margin: 2.4rem auto 0; max-width: 1000px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem;
+}
+.portfolio-strip__item {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-radius: 999px; padding: 0.6rem 1.15rem;
+  font-weight: 700; font-size: 0.96rem; color: var(--vp-green-700);
+  box-shadow: var(--vp-shadow-sm);
+  transition: transform 0.2s var(--vp-ease), border-color 0.2s var(--vp-ease);
+}
+.portfolio-strip__item:hover { transform: translateY(-3px); border-color: var(--vp-teal-300); }
+.portfolio-strip__icon {
+  width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px;
+  background: var(--vp-mist); color: var(--vp-green-700); font-size: 0.95rem;
+}
+
+/* ---------------- Infrastructure portfolio record ---------------- */
+.portfolio-record {
+  background: #fff; border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius-lg); padding: 1.8rem; margin-top: 2rem;
+  box-shadow: var(--vp-shadow-sm);
+}
+.record-block__title {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 1.06rem; color: var(--vp-green-800); margin-bottom: 0.8rem;
+}
+.record-block__title i { color: var(--vp-teal-600); }
+
+.record-clients { list-style: none; padding: 0; margin: 0 0 0.7rem; display: grid; gap: 0.6rem; }
+.record-clients__item {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: var(--vp-off-white); border: 1px solid var(--vp-line);
+  border-left: 4px solid var(--vp-green-600);
+  border-radius: 10px; padding: 0.75rem 1rem;
+  font-weight: 700; color: var(--vp-ink); font-size: 1rem;
+}
+.record-clients__item i { color: var(--vp-green-600); }
+.record-note, .record-hint { font-size: 0.84rem; color: var(--vp-muted); margin: 0; font-style: italic; }
+
+.record-meta { margin: 0; }
+.record-meta__row {
+  display: grid; grid-template-columns: 140px 1fr; gap: 0.5rem 1rem;
+  padding: 0.7rem 0; border-bottom: 1px dashed var(--vp-line); align-items: start;
+}
+.record-meta__row:last-child { border-bottom: none; }
+.record-meta dt { font-weight: 700; color: var(--vp-ink-soft); display: flex; align-items: center; gap: 0.45rem; }
+.record-meta dt i { color: var(--vp-teal-600); }
+.record-meta dd { margin: 0; color: var(--vp-ink); }
+.record-pending {
+  display: inline-flex; align-items: center;
+  background: #fff6e6; border: 1px solid #f0dcae; color: #8a6d1f;
+  border-radius: 999px; padding: 0.28rem 0.8rem; font-size: 0.9rem; font-weight: 700;
+}
+.record-hint { margin-top: 0.7rem; }
+
+.record-services {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem 1.2rem;
+}
+.record-services li { display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.98rem; color: var(--vp-ink-soft); }
+.record-services li i { color: var(--vp-green-600); }
+
+/* ---------------- Technical capability cards ---------------- */
+.tech-card {
+  height: 100%; overflow: hidden;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius-lg);
+  box-shadow: var(--vp-shadow-sm);
+  transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease);
+}
+.tech-card:hover { transform: translateY(-5px); box-shadow: var(--vp-shadow-md); }
+.tech-card__media { position: relative; height: 140px; overflow: hidden; }
+.tech-card__media .hero__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tech-card__img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
+.tech-card__media-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(6,32,23,0.15), rgba(6,32,23,0.55)); }
+.tech-card__icon { z-index: 3; }
+.tech-card__icon {
+  position: absolute; left: 1.1rem; bottom: -22px; z-index: 2;
+  width: 52px; height: 52px; display: grid; place-items: center;
+  border-radius: 13px; background: var(--vp-grad-green); color: #fff; font-size: 1.35rem;
+  box-shadow: 0 8px 18px rgba(13,92,63,0.28);
+}
+.tech-card__body { padding: 1.8rem 1.4rem 1.4rem; }
+.tech-card__title { font-size: 1.12rem; margin-bottom: 0.6rem; }
+.tech-card__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.45rem; }
+.tech-card__list li { display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.95rem; color: var(--vp-ink-soft); }
+.tech-card__list li i { color: var(--vp-green-600); }
+
+/* ---------------- Execution capability cards ---------------- */
+.exec-card {
+  height: 100%; display: flex; gap: 1rem;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius); padding: 1.4rem 1.5rem;
+  transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease), border-color 0.3s var(--vp-ease);
+}
+.exec-card:hover { transform: translateY(-4px); box-shadow: var(--vp-shadow-md); border-color: var(--vp-teal-300); }
+.exec-card__icon {
+  flex: 0 0 auto; width: 52px; height: 52px;
+  display: grid; place-items: center; border-radius: 13px;
+  background: var(--vp-mist); color: var(--vp-green-700); font-size: 1.3rem;
+  transition: background 0.3s var(--vp-ease), color 0.3s var(--vp-ease);
+}
+.exec-card:hover .exec-card__icon { background: var(--vp-grad-green); color: #fff; }
+.exec-card__title { font-size: 1.1rem; margin-bottom: 0.3rem; }
+.exec-card__text { font-size: 0.96rem; color: var(--vp-ink-soft); margin: 0; }
+
+/* ---------------- Renewable context (on .ops dark section) ---------------- */
+.context-figure {
+  margin: 1.4rem 0; padding: 1.4rem 1.5rem;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(127,214,207,0.28);
+  border-radius: var(--vp-radius-lg);
+}
+.context-figure__value {
+  display: block; font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 700; line-height: 1;
+  color: var(--vp-gold-400);
+}
+.context-figure__label { display: block; margin-top: 0.5rem; font-size: 1.02rem; color: #fff; }
+.context-figure__areas { display: block; margin-top: 0.5rem; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; color: var(--vp-teal-300); }
+.context-disclaimer {
+  display: flex; align-items: baseline; gap: 0.5rem;
+  font-size: 0.92rem; color: rgba(255,255,255,0.8); font-style: italic; margin: 0;
+}
+.context-disclaimer i { color: var(--vp-gold-400); }
+.context-subtitle { color: #fff; font-size: 1.16rem; margin-bottom: 1rem; }
+.context-caps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+.context-caps__item {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(127,214,207,0.24);
+  border-radius: 10px; padding: 0.7rem 0.9rem;
+  font-size: 0.94rem; font-weight: 700; color: #fff;
+}
+.context-caps__item i { color: var(--vp-teal-300); }
+.context-note { margin: 1rem 0 0; font-size: 0.88rem; color: rgba(255,255,255,0.75); font-style: italic; }
+
+/* ---------------- Project results band ---------------- */
+.results-band {
+  text-align: center; max-width: 820px; margin: 0 auto;
+  background: var(--vp-off-white); border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius-lg); padding: 2.4rem 2rem;
+  box-shadow: var(--vp-shadow-sm);
+}
+.results-band__icon {
+  display: inline-grid; place-items: center; width: 64px; height: 64px;
+  border-radius: 50%; background: var(--vp-grad-green); color: #fff; font-size: 1.7rem;
+  margin-bottom: 1rem; box-shadow: 0 10px 24px rgba(13,92,63,0.22);
+}
+.results-band__statement { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--vp-ink); font-weight: 700; line-height: 1.5; margin: 0.6rem 0 0; }
+
+/* ---------------- Project categories ---------------- */
+.pcat-card {
+  height: 100%;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-top: 4px solid var(--vp-green-600);
+  border-radius: var(--vp-radius); padding: 1.5rem;
+  transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease);
+}
+.pcat-card:hover { transform: translateY(-4px); box-shadow: var(--vp-shadow-md); }
+.pcat-card__head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem; }
+.pcat-card__icon {
+  width: 48px; height: 48px; flex: 0 0 auto; display: grid; place-items: center;
+  border-radius: 12px; background: var(--vp-grad-green); color: #fff; font-size: 1.25rem;
+}
+.pcat-card__title { font-size: 1.1rem; margin: 0; }
+.pcat-card__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
+.pcat-card__list li { display: flex; align-items: center; gap: 0.3rem; font-size: 0.96rem; color: var(--vp-ink-soft); }
+.pcat-card__list li i { color: var(--vp-teal-500); font-size: 1.1rem; }
+
+/* ---------------- Case study card (future) ---------------- */
+.case-card {
+  height: 100%; overflow: hidden;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius-lg); box-shadow: var(--vp-shadow-sm);
+}
+.case-card__media img { width: 100%; height: 190px; object-fit: cover; }
+.case-card__body { padding: 1.4rem; }
+.case-card__title { font-size: 1.15rem; margin-bottom: 0.6rem; }
+.case-card__meta { list-style: none; padding: 0; margin: 0 0 0.7rem; display: grid; gap: 0.35rem; }
+.case-card__meta li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.92rem; color: var(--vp-ink-soft); }
+.case-card__meta i { color: var(--vp-teal-600); }
+.case-card__summary { font-size: 0.96rem; color: var(--vp-ink-soft); }
+.case-card__scope { list-style: none; padding: 0; margin: 0.6rem 0 0; display: grid; gap: 0.35rem; }
+.case-card__scope li { display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.92rem; color: var(--vp-ink-soft); }
+.case-card__scope i { color: var(--vp-green-600); }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 767.98px) {
+  .record-meta__row { grid-template-columns: 1fr; gap: 0.25rem; }
+  .context-caps { grid-template-columns: 1fr; }
+  .record-services { grid-template-columns: 1fr; }
+}

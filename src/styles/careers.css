@@ -1,0 +1,75 @@
+/* ============================================================
+   Vedanjay Power — Careers page styles
+   Reuses tokens/buttons (index.css), sections/cards (home.css),
+   hero/breadcrumb (about.css), phil-card (leadership.css),
+   enquiry form (services.css).
+   ============================================================ */
+
+/* Career areas — clean, card-less feature layout */
+.career-area {
+  padding-left: 0.1rem;
+  border-top: 2px solid var(--vp-line);
+  padding-top: 1.1rem;
+  transition: border-color 0.3s var(--vp-ease);
+}
+.career-area:hover { border-top-color: var(--vp-green-600); }
+.career-area__icon {
+  display: inline-grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 11px;
+  font-size: 1.2rem; color: var(--vp-green-600);
+  background: var(--vp-mist);
+  margin-bottom: 0.7rem;
+  transition: background 0.3s var(--vp-ease), color 0.3s var(--vp-ease), transform 0.3s var(--vp-ease);
+}
+.career-area:hover .career-area__icon {
+  background: var(--vp-grad-green); color: #fff; transform: translateY(-3px);
+}
+.career-area__title { font-size: 1.14rem; margin-bottom: 0.4rem; line-height: 1.25; }
+.career-area__text { font-size: 0.95rem; color: var(--vp-ink-soft); margin: 0; }
+
+/* Openings */
+.opening-card {
+  height: 100%;
+  display: flex; gap: 1.1rem;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-left: 4px solid var(--vp-green-600);
+  border-radius: var(--vp-radius); padding: 1.6rem;
+  box-shadow: var(--vp-shadow-sm);
+  transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease);
+}
+.opening-card:hover { transform: translateY(-4px); box-shadow: var(--vp-shadow-md); }
+.opening-card__icon {
+  flex: 0 0 auto; width: 54px; height: 54px;
+  display: grid; place-items: center; border-radius: 14px;
+  font-size: 1.45rem; color: #fff; background: var(--vp-grad-green);
+  box-shadow: 0 8px 18px rgba(13, 92, 63, 0.2);
+}
+.opening-card__title { font-size: 1.14rem; margin-bottom: 0.35rem; }
+.opening-card__detail { font-size: 0.96rem; color: var(--vp-ink-soft); margin: 0 0 0.9rem; }
+
+/* Apply contacts */
+.apply-contact { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: 0.6rem; }
+.apply-contact li { display: flex; align-items: center; gap: 0.6rem; font-size: 1rem; }
+.apply-contact i { color: var(--vp-teal-600); }
+.apply-contact a { font-weight: 700; }
+
+/* Resume upload control */
+.enquiry__opt { font-weight: 400; color: var(--vp-muted); font-size: 0.82rem; }
+.upload {
+  display: flex; align-items: center; gap: 0.8rem;
+  border: 1.5px dashed var(--vp-line); border-radius: 10px;
+  padding: 0.55rem 0.7rem; background: var(--vp-off-white);
+  position: relative; cursor: pointer;
+  transition: border-color 0.2s var(--vp-ease), background 0.2s var(--vp-ease);
+}
+.upload:hover { border-color: var(--vp-green-500); background: #fff; }
+.upload.is-invalid { border-color: var(--vp-danger); background: var(--vp-danger-bg); }
+.upload__input {
+  position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+}
+.upload__btn {
+  display: inline-flex; align-items: center; gap: 0.4rem; flex: 0 0 auto;
+  background: var(--vp-mist); color: var(--vp-green-700);
+  border-radius: 8px; padding: 0.4rem 0.8rem; font-weight: 700; font-size: 0.9rem;
+}
+.upload__name { font-size: 0.9rem; color: var(--vp-ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

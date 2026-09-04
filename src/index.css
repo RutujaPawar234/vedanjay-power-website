@@ -1,0 +1,280 @@
+/* ============================================================
+   Vedanjay Power — Global Visual Identity
+   Font: Times New Roman (modern, premium usage)
+   Palette: white + deep/emerald green, soft teal, subtle solar-gold
+   ============================================================ */
+
+:root {
+  /* Greens */
+  --vp-green-950: #082a1f; /* deepest anchor — hero/dark-band base only */
+  --vp-green-900: #0e3d1a; /* deep forest green */
+  --vp-green-800: #175f2a; /* deep brand green (dark sections) */
+  --vp-green-700: #2f8f2d; /* logo secondary green */
+  --vp-green-600: #37a534; /* logo primary green */
+  --vp-green-500: #46b03f;
+  --vp-green-400: #66c65f;
+
+  /* Teal accents */
+  --vp-teal-600: #158a86;
+  --vp-teal-500: #2bb0a6;
+  --vp-teal-300: #7fd6cf;
+
+  /* Solar-gold (subtle accents only) */
+  --vp-gold-500: #d9a441;
+  --vp-gold-400: #e6bb63;
+
+  /* Brand wordmark greens — APPROVED BRAND ASSET, do NOT alter.
+     The logo itself keeps its own literal hexes (see home.css .vp-logo__name);
+     these tokens exist only so the SAME greens can be reused SPARINGLY as
+     brand accents elsewhere (active nav tie-ins, selected states, small
+     highlights). Never use for large fills — the UI palette stays emerald. */
+  --vp-brand: #37a534;
+  --vp-brand-strong: #2f8f2d;
+
+  /* Neutrals */
+  --vp-white: #ffffff;
+  --vp-off-white: #f6faf8;
+  --vp-mist: #eef4f1;
+  --vp-line: #e3ece8;
+  --vp-ink: #16211d;      /* near-black text with green undertone */
+  --vp-ink-soft: #3f4f49;
+  --vp-muted: #6a7b74;
+
+  /* Semantic */
+  --vp-bg: var(--vp-white);
+  --vp-text: var(--vp-ink);
+  --vp-primary: var(--vp-green-800);
+  --vp-accent: var(--vp-teal-500);
+  --vp-footer-bg: #06211a;              /* footer / deepest surface */
+  --vp-danger: #c0392b;                  /* form validation errors, required marks */
+  --vp-danger-bg: #fff6f5;               /* invalid-field fill */
+  --vp-whatsapp: #25d366;                /* WhatsApp brand icon only */
+  --vp-focus: var(--vp-teal-300);        /* keyboard focus ring */
+  --vp-on-dark: rgba(255, 255, 255, 0.92);      /* body text on dark bands */
+  --vp-on-dark-muted: rgba(255, 255, 255, 0.75);/* secondary text on dark bands */
+
+  /* Gradients */
+  --vp-grad-green: linear-gradient(135deg, var(--vp-green-700) 0%, var(--vp-green-600) 60%, var(--vp-green-500) 100%);
+  --vp-grad-deep: linear-gradient(135deg, var(--vp-green-900) 0%, var(--vp-green-800) 55%, var(--vp-green-700) 100%);
+
+  /* Shape / motion */
+  --vp-radius-sm: 10px;
+  --vp-radius: 12px;
+  --vp-radius-lg: 18px;
+  --vp-radius-pill: 999px;
+  --vp-shadow-sm: 0 4px 16px rgba(13, 92, 63, 0.06);
+  --vp-shadow-md: 0 12px 30px rgba(13, 92, 63, 0.10);
+  --vp-shadow-lg: 0 22px 50px rgba(10, 61, 43, 0.16);
+  --vp-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --vp-transition: 0.25s var(--vp-ease);
+
+  /* Layout */
+  --vp-header-h: 76px;
+
+  --bs-body-font-family: "Times New Roman", Times, serif;
+}
+
+* { box-sizing: border-box; }
+
+/* Prevent the off-screen mobile offcanvas (position:fixed) from adding
+   horizontal scroll. `clip` (not `hidden`) avoids creating a scroll
+   container, so position:sticky (e.g. the services nav) keeps working. */
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { overflow-x: clip; }
+
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  color: var(--vp-text);
+  background: var(--vp-bg);
+  font-size: 1.0625rem;      /* ~17px, medium */
+  line-height: 1.65;
+  letter-spacing: 0.1px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Times can render heavy at large sizes; refine display headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Times New Roman", Times, serif;
+  color: var(--vp-ink);
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  margin: 0 0 0.5em;
+  font-weight: 700;
+}
+
+a { color: var(--vp-green-700); text-decoration: none; transition: color 0.25s var(--vp-ease); }
+a:hover { color: var(--vp-green-500); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- Typography scale (restrained, corporate) ---------- */
+.eyebrow {
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--vp-green-600);
+}
+.eyebrow--light { color: var(--vp-teal-300); }
+
+.section-title {
+  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.section-lead {
+  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+  color: var(--vp-ink-soft);
+  max-width: 62ch;
+}
+.text-muted-green { color: var(--vp-muted); }
+.text-accent { color: var(--vp-teal-600); }
+
+/* Thin gradient rule used under titles */
+.title-rule {
+  width: 58px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--vp-grad-green);
+  margin: 0.85rem 0 1.25rem;
+}
+.title-rule--center { margin-left: auto; margin-right: auto; }
+
+/* ---------- Section rhythm ---------- */
+.section { padding: clamp(3.2rem, 6vw, 5.5rem) 0; }
+.section--tight { padding: clamp(2.4rem, 4vw, 3.6rem) 0; }
+.section--mist { background: var(--vp-off-white); }
+.section--band { background: var(--vp-mist); }
+
+/* ---------- Buttons ---------- */
+.btn-vp {
+  --_pad-y: 0.72rem;
+  --_pad-x: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.3px;
+  padding: var(--_pad-y) var(--_pad-x);
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s var(--vp-ease), box-shadow 0.25s var(--vp-ease),
+    background 0.25s var(--vp-ease), color 0.25s var(--vp-ease), border-color 0.25s var(--vp-ease);
+  text-decoration: none;
+  line-height: 1;
+}
+.btn-vp:focus-visible { outline: 3px solid var(--vp-teal-300); outline-offset: 2px; }
+
+/* All CTA button variants share the logo's faint-orange identity */
+.btn-vp-primary,
+.btn-vp-outline,
+.btn-vp-ghost,
+.btn-vp-gold {
+  background: linear-gradient(135deg, #f4a24a, #f8c078);
+  color: #4a2c05;
+  border-color: transparent;
+  box-shadow: 0 8px 22px rgba(244, 150, 55, 0.26);
+}
+.btn-vp-primary:hover,
+.btn-vp-outline:hover,
+.btn-vp-ghost:hover,
+.btn-vp-gold:hover {
+  color: #4a2c05;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(244, 150, 55, 0.34);
+}
+
+.btn-vp-sm { --_pad-y: 0.5rem; --_pad-x: 1.05rem; font-size: 0.9rem; }
+
+.btn-emoji { font-size: 1.1em; line-height: 1; filter: saturate(1.1); }
+
+/* ---------- Chips / pills ---------- */
+.vp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--vp-green-700);
+  background: var(--vp-mist);
+  border: 1px solid var(--vp-line);
+}
+
+/* ---------- Card system (shared base for page cards) ---------- */
+.vp-card {
+  background: var(--vp-white);
+  border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius-lg);
+  box-shadow: var(--vp-shadow-sm);
+  transition: transform var(--vp-transition), box-shadow var(--vp-transition),
+    border-color var(--vp-transition);
+}
+.vp-card--hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vp-shadow-md);
+  border-color: transparent;
+}
+
+/* Standard media icon tile used across cards (emerald gradient chip) */
+.vp-icon-tile {
+  display: grid;
+  place-items: center;
+  width: 52px; height: 52px;
+  border-radius: var(--vp-radius);
+  background: var(--vp-grad-green);
+  color: var(--vp-white);
+  font-size: 1.35rem;
+  box-shadow: var(--vp-shadow-sm);
+  flex: 0 0 auto;
+}
+
+/* ---------- Accessibility helpers ---------- */
+/* Consistent keyboard focus ring for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--vp-focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 2000;
+  background: var(--vp-green-800);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; color: #fff; }
+
+.page-placeholder {
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--vp-header-h) + 2rem);
+  padding-bottom: 3rem;
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,93 @@
+/* ============================================================
+   Vedanjay Power — Leadership page styles
+   Reuses tokens/buttons (index.css), sections (home.css),
+   hero/breadcrumb (about.css), context-figure (projects.css).
+   ============================================================ */
+
+/* ---------------- Leadership profiles ---------------- */
+.lead-profile {
+  height: 100%;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius-lg); overflow: hidden;
+  box-shadow: var(--vp-shadow-sm);
+  transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease);
+}
+.lead-profile:hover { transform: translateY(-5px); box-shadow: var(--vp-shadow-md); }
+.lead-profile__photo {
+  position: relative;
+  height: 220px;
+  display: grid; place-items: center;
+  background: var(--vp-grad-deep); color: #fff;
+  overflow: hidden;
+}
+.lead-profile__photo::after {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(70% 70% at 50% 45%, #000, transparent 100%);
+}
+.lead-profile__initials {
+  position: relative; z-index: 1;
+  width: 96px; height: 96px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,0.14); border: 2px solid rgba(127,214,207,0.5);
+  font-size: 2.2rem; font-weight: 700; letter-spacing: 1px;
+}
+.lead-profile__photo-status {
+  position: absolute; bottom: 0.8rem; left: 0; right: 0; z-index: 1;
+  text-align: center; font-size: 0.8rem; color: var(--vp-teal-300); font-style: italic;
+}
+.lead-profile__body { padding: 1.4rem 1.5rem 1.6rem; }
+.lead-profile__name { font-size: 1.2rem; margin-bottom: 0.15rem; }
+.lead-profile__role { font-size: 0.98rem; color: var(--vp-green-700); font-weight: 700; margin-bottom: 0.8rem; }
+.lead-profile__links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.lead-profile__linkedin { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; font-size: 0.94rem; }
+.lead-profile__pending {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.88rem; font-weight: 700; color: #8a6d1f;
+  background: #fff6e6; border: 1px solid #f0dcae; border-radius: 999px; padding: 0.3rem 0.85rem;
+}
+.lead-note { margin-top: 1.6rem; font-size: 0.9rem; color: var(--vp-muted); font-style: italic; }
+
+/* ---------------- Philosophy cards ---------------- */
+.phil-card {
+  height: 100%;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius); padding: 1.5rem;
+  transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease), border-color 0.3s var(--vp-ease);
+}
+.phil-card:hover { transform: translateY(-4px); box-shadow: var(--vp-shadow-md); border-color: var(--vp-teal-300); }
+.phil-card__icon {
+  width: 54px; height: 54px; display: grid; place-items: center;
+  border-radius: 14px; font-size: 1.45rem; margin-bottom: 0.9rem;
+  color: var(--vp-green-700); background: var(--vp-mist);
+  transition: background 0.3s var(--vp-ease), color 0.3s var(--vp-ease);
+}
+.phil-card:hover .phil-card__icon { background: var(--vp-grad-green); color: #fff; }
+.phil-card__title { font-size: 1.12rem; margin-bottom: 0.35rem; }
+.phil-card__text { font-size: 0.96rem; color: var(--vp-ink-soft); margin: 0; }
+
+/* ---------------- Organizational strength ---------------- */
+.orgstr-grid {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem;
+}
+.orgstr-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(127,214,207,0.24);
+  border-radius: var(--vp-radius); padding: 0.9rem 1rem;
+  transition: transform 0.25s var(--vp-ease), background 0.25s var(--vp-ease), border-color 0.25s var(--vp-ease);
+}
+.orgstr-item:hover { transform: translateY(-3px); background: rgba(255,255,255,0.12); border-color: var(--vp-teal-300); }
+.orgstr-item__icon {
+  width: 44px; height: 44px; flex: 0 0 auto; display: grid; place-items: center;
+  border-radius: 11px; background: rgba(43,176,166,0.22); border: 1px solid rgba(127,214,207,0.4);
+  color: #fff; font-size: 1.15rem;
+}
+.orgstr-item__text { font-size: 0.96rem; font-weight: 700; color: #fff; line-height: 1.25; }
+
+@media (max-width: 575.98px) {
+  .orgstr-grid { grid-template-columns: 1fr; }
+}

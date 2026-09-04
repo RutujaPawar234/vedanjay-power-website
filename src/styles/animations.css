@@ -1,0 +1,76 @@
+/* ============================================================
+   Vedanjay Power — Motion design
+   Precise, technical, premium, energy-focused. Subtle by default.
+   ============================================================ */
+
+/* ---------- Scroll reveal (IntersectionObserver adds .is-visible) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s var(--vp-ease), transform 0.8s var(--vp-ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+.reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.8s var(--vp-ease), transform 0.8s var(--vp-ease); }
+.reveal-left.is-visible { opacity: 1; transform: none; }
+.reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.8s var(--vp-ease), transform 0.8s var(--vp-ease); }
+.reveal-right.is-visible { opacity: 1; transform: none; }
+.reveal-scale { opacity: 0; transform: scale(0.96); transition: opacity 0.8s var(--vp-ease), transform 0.8s var(--vp-ease); }
+.reveal-scale.is-visible { opacity: 1; transform: none; }
+
+/* Stagger via inline --d delay */
+.reveal[style*="--d"] { transition-delay: var(--d); }
+
+/* ---------- Hero cross-fade + slow zoom ---------- */
+@keyframes vp-kenburns {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.14); }
+}
+@keyframes vp-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Energy flow along grid lines ---------- */
+@keyframes vp-dash-flow {
+  to { stroke-dashoffset: -240; }
+}
+@keyframes vp-node-pulse {
+  0%, 100% { opacity: 0.35; r: 2.4; }
+  50% { opacity: 1; r: 3.4; }
+}
+
+/* ---------- Chatbot pulse ---------- */
+@keyframes vp-pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.55; }
+  70% { transform: scale(1.7); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ---------- Soft floating (intro badge, etc.) ---------- */
+@keyframes vp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ---------- Operations flow: traveling energy pulse ---------- */
+@keyframes vp-flow-move {
+  0% { left: -12%; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* ---------- Gradient sheen for prominent numbers ---------- */
+@keyframes vp-sheen {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
