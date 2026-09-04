@@ -1,36 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HERO_SCENES } from '../data/homeData.js';
+import { PORTFOLIO_TOTAL_MW } from '../data/portfolioData.js';
 import HeroScene from './HeroScene.jsx';
+import HeroFX from './HeroFX.jsx';
 
 const INTERVAL = 3200;
-
-/**
- * Decorative grid + energy-flow overlay (subtle, non-interactive).
- */
-function EnergyGridOverlay() {
-  return (
-    <svg
-      className="hero__grid"
-      viewBox="0 0 1440 800"
-      preserveAspectRatio="xMidYMid slice"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <defs>
-        <linearGradient id="heroLine" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#7fd6cf" stopOpacity="0.0" />
-          <stop offset="50%" stopColor="#7fd6cf" stopOpacity="0.45" />
-          <stop offset="100%" stopColor="#7fd6cf" stopOpacity="0.0" />
-        </linearGradient>
-      </defs>
-      <g fill="none" stroke="url(#heroLine)" strokeWidth="2" className="hero__flowlines">
-        <path d="M-40 620 L360 620 L520 460 L900 460 L1040 300 L1500 300" />
-        <path d="M-40 180 L300 180 L440 340 L860 340 L1000 500 L1500 500" />
-      </g>
-    </svg>
-  );
-}
 
 export default function Hero() {
   const [active, setActive] = useState(0);
@@ -94,7 +69,16 @@ export default function Hero() {
           </div>
         ))}
         <div className="hero__overlay" />
-        <EnergyGridOverlay />
+        <HeroFX />
+      </div>
+
+      {/* Live portfolio badge (real managed QCA/F&S figure) */}
+      <div className="hero__badge" aria-hidden="true">
+        <span className="hero__badge-dot" />
+        <span className="hero__badge-text">
+          <strong>{PORTFOLIO_TOTAL_MW} MW</strong>
+          Renewable portfolio under QCA / F&amp;S
+        </span>
       </div>
 
       {/* Slide progress indicator */}

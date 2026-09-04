@@ -1131,3 +1131,43 @@
 .areas-map__badge-label { font-size: 1rem; font-weight: 700; color: var(--vp-ink); margin-top: 0.2rem; }
 .areas-map__badge-sub { font-size: 0.86rem; color: var(--vp-gold-500); font-weight: 700; margin-top: 0.15rem; }
 :root[data-theme="dark"] .areas-map__badge { background: rgba(20,33,27,0.8); }
+
+/* ---------------------------------------------------------------
+   HERO ANIMATED OVERLAY (light) + LIVE PORTFOLIO BADGE
+--------------------------------------------------------------- */
+.hero__fx { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; opacity: 0.9; }
+.hero__fx-line { stroke-dasharray: 10 14; animation: vp-dash-flow 6s linear infinite; }
+.hero__fx-line--2 { animation-duration: 8s; }
+.hero__fx-line--3 { animation-duration: 7s; }
+.hero__fx-particles circle {
+  animation-name: vp-particle; animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; opacity: 0.5;
+}
+@keyframes vp-particle {
+  0%, 100% { transform: translateY(0); opacity: 0.35; }
+  50% { transform: translateY(-18px); opacity: 0.85; }
+}
+
+.hero__badge {
+  position: absolute; left: clamp(1rem, 4vw, 3rem); bottom: 4.6rem; z-index: 2;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: rgba(6, 32, 23, 0.45); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.28); border-radius: 999px;
+  padding: 0.5rem 0.95rem 0.5rem 0.75rem; color: #fff;
+}
+.hero__badge-dot {
+  width: 10px; height: 10px; flex: 0 0 auto; border-radius: 50%; background: #7dffbf;
+  animation: vp-badge-pulse 2s infinite;
+}
+.hero__badge-text { display: flex; flex-direction: column; line-height: 1.18; font-size: 0.8rem; color: rgba(255, 255, 255, 0.9); }
+.hero__badge-text strong { font-size: 1.02rem; color: #fff; }
+@keyframes vp-badge-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(125, 255, 191, 0.55); }
+  70% { box-shadow: 0 0 0 11px rgba(125, 255, 191, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(125, 255, 191, 0); }
+}
+.hero--right .hero__badge { left: auto; right: clamp(1rem, 4vw, 3rem); }
+@media (max-width: 991.98px) { .hero__badge { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero__fx-line, .hero__fx-particles circle, .hero__badge-dot { animation: none; }
+}
