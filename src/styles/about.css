@@ -25,7 +25,7 @@
   min-height: 56vh;
   padding: calc(var(--vp-header-h) + 2.6rem) 0 3rem;
 }
-.about-hero__bg { position: absolute; inset: 0; z-index: -2; }
+.about-hero__bg { position: absolute; inset: 0; z-index: -2; background: var(--vp-grad-deep); }
 .about-hero__bg .hero__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .about-hero__bg .hero__svg { animation: vp-kenburns 16s ease-out forwards; }
 .about-hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -173,7 +173,7 @@
 
 /* ---------------- Vision ---------------- */
 .vision { position: relative; overflow: hidden; color: #fff; isolation: isolate; }
-.vision__bg { position: absolute; inset: 0; z-index: -2; }
+.vision__bg { position: absolute; inset: 0; z-index: -2; background: var(--vp-grad-deep); }
 .vision__bg .hero__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .vision__overlay {
   position: absolute; inset: 0;
