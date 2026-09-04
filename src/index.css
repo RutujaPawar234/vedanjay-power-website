@@ -278,3 +278,98 @@ select:focus-visible,
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ============================================================
+   DARK THEME  (toggle sets html[data-theme="dark"])
+   Logo art + deep-green brand bands keep their colours; only the
+   light UI surfaces/neutrals invert.
+   ============================================================ */
+:root { --vp-surface: #ffffff; }
+
+:root[data-theme="dark"] {
+  --vp-bg: #0b1512;
+  --vp-off-white: #10201a;
+  --vp-mist: #17271f;
+  --vp-line: #27372e;
+  --vp-ink: #e9f1ec;
+  --vp-ink-soft: #b6c6bd;
+  --vp-muted: #8a9d93;
+  --vp-surface: #14211b;
+  --vp-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --vp-shadow-md: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --vp-shadow-lg: 0 22px 50px rgba(0, 0, 0, 0.55);
+}
+
+/* Solid header + white card surfaces → dark surface */
+:root[data-theme="dark"] .vp-header--solid { background: rgba(11, 21, 18, 0.94); }
+:root[data-theme="dark"] .vp-header--solid .vp-brand__name,
+:root[data-theme="dark"] .section-title,
+:root[data-theme="dark"] h1, :root[data-theme="dark"] h2,
+:root[data-theme="dark"] h3, :root[data-theme="dark"] h4 { color: var(--vp-ink); }
+
+:root[data-theme="dark"] .eco-card,
+:root[data-theme="dark"] .why-card,
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .svc-panel,
+:root[data-theme="dark"] .value-card,
+:root[data-theme="dark"] .phil-card,
+:root[data-theme="dark"] .achieve-card,
+:root[data-theme="dark"] .mission-card,
+:root[data-theme="dark"] .industry-card,
+:root[data-theme="dark"] .cap-card,
+:root[data-theme="dark"] .renew-card,
+:root[data-theme="dark"] .office-card,
+:root[data-theme="dark"] .contact-panel,
+:root[data-theme="dark"] .contact-row,
+:root[data-theme="dark"] .location-card,
+:root[data-theme="dark"] .location-card__body,
+:root[data-theme="dark"] .faq-item,
+:root[data-theme="dark"] .enquiry-card,
+:root[data-theme="dark"] .enquiry,
+:root[data-theme="dark"] .opening-card,
+:root[data-theme="dark"] .lead-profile,
+:root[data-theme="dark"] .matrix__panel,
+:root[data-theme="dark"] .matrix__item,
+:root[data-theme="dark"] .matrix__tab,
+:root[data-theme="dark"] .help-card,
+:root[data-theme="dark"] .eco-pipeline__step,
+:root[data-theme="dark"] .story-panel,
+:root[data-theme="dark"] .segment-nrv,
+:root[data-theme="dark"] .about-visual__badge,
+:root[data-theme="dark"] .intro-visual__badge,
+:root[data-theme="dark"] .vp-chatbot__panel,
+:root[data-theme="dark"] .chatmsg--bot .chatmsg__bubble,
+:root[data-theme="dark"] .chat-quick__btn,
+:root[data-theme="dark"] .chat-input__field,
+:root[data-theme="dark"] .contact-tile {
+  background: var(--vp-surface);
+  border-color: var(--vp-line);
+  color: var(--vp-ink);
+}
+
+/* Form fields + inputs */
+:root[data-theme="dark"] .enquiry__input,
+:root[data-theme="dark"] .upload { background: var(--vp-off-white); border-color: var(--vp-line); color: var(--vp-ink); }
+:root[data-theme="dark"] .enquiry__input::placeholder { color: var(--vp-muted); }
+
+/* Icon tiles that used a light mist background */
+:root[data-theme="dark"] .eco-card__icon,
+:root[data-theme="dark"] .value-card__icon,
+:root[data-theme="dark"] .phil-card__icon,
+:root[data-theme="dark"] .career-area__icon,
+:root[data-theme="dark"] .help-card__icon,
+:root[data-theme="dark"] .contact-row__icon,
+:root[data-theme="dark"] .vp-chip { background: var(--vp-mist); color: var(--vp-green-500); }
+
+/* Chatbot header/footer + notes stay readable */
+:root[data-theme="dark"] .vp-chatbot__body { background: var(--vp-off-white); }
+:root[data-theme="dark"] .vp-chatbot__note,
+:root[data-theme="dark"] .vp-chatbot__footer { background: var(--vp-surface); }
+
+/* Meta color-scheme so form controls/scrollbars follow the theme */
+:root[data-theme="dark"] { color-scheme: dark; }
+
+/* Areas of operation — dark theme */
+:root[data-theme="dark"] .area-card { background: var(--vp-surface); border-color: var(--vp-line); }
+:root[data-theme="dark"] .areas-map { background: linear-gradient(160deg, #16261f, #10201a); }
+:root[data-theme="dark"] .areas-map__caption { color: var(--vp-muted); }

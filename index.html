@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0d5c3f" />
     <link rel="canonical" href="https://vedanjay-power.com/" />
+    <script>
+      // Apply saved theme before paint to avoid a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem('vp-theme');
+          if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
 
     <!-- Base title / description (per-page values injected via react-helmet-async) -->
     <title>Vedanjay Power Pvt. Ltd. | Renewable Energy &amp; Power Sector Solutions</title>

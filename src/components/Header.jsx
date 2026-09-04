@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { NAV_LINKS } from '../data/homeData.js';
 import BrandLogo from './BrandLogo.jsx';
+import ThemeToggle from './ThemeToggle.jsx';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const onHome = location.pathname === '/';
 
@@ -15,15 +17,22 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const transparent = onHome && !scrolled;
+  // Close the drawer on route change.
+  useEffect(() => { setMenuOpen(false); }, [location.pathname]);
 
-  const closeOffcanvas = () => {
-    const el = document.getElementById('vpMobileNav');
-    if (el && window.bootstrap) {
-      const inst = window.bootstrap.Offcanvas.getInstance(el);
-      inst?.hide();
-    }
-  };
+  // Lock body scroll + close on Escape while the drawer is open.
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false); };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [menuOpen]);
+
+  const transparent = onHome && !scrolled && !menuOpen;
 
   return (
     <header className={`vp-header ${transparent ? 'vp-header--transparent' : 'vp-header--solid'}`}>
@@ -47,13 +56,13 @@ export default function Header() {
         </nav>
 
         <div className="vp-header__actions">
-          {/* Mobile menu toggle */}
+          <ThemeToggle />
           <button
             className="vp-burger d-xl-none"
             type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#vpMobileNav"
+            onClick={() => setMenuOpen(true)}
             aria-controls="vpMobileNav"
+            aria-expanded={menuOpen}
             aria-label="Open navigation menu"
           >
             <i className="bi bi-list" aria-hidden="true" />
@@ -61,35 +70,44 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile offcanvas */}
+      {/* Mobile drawer (React-controlled, no Bootstrap JS) */}
       <div
-        className="offcanvas offcanvas-end vp-offcanvas"
-        tabIndex="-1"
+        className={`vp-drawer__backdrop ${menuOpen ? 'is-open' : ''}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
+      <aside
         id="vpMobileNav"
-        aria-labelledby="vpMobileNavLabel"
+        className={`vp-drawer ${menuOpen ? 'is-open' : ''}`}
+        aria-label="Mobile navigation"
+        aria-hidden={!menuOpen}
       >
-        <div className="offcanvas-header">
-          <span className="vp-brand" id="vpMobileNavLabel">
-            <BrandLogo />
-          </span>
-          <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
+        <div className="vp-drawer__head">
+          <BrandLogo />
+          <button
+            type="button"
+            className="vp-drawer__close"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close navigation menu"
+          >
+            <i className="bi bi-x-lg" aria-hidden="true" />
+          </button>
         </div>
-        <div className="offcanvas-body">
-          <nav className="vp-nav-mobile" aria-label="Mobile primary">
-            {NAV_LINKS.map((l) => (
-              <NavLink
-                key={l.to}
-                to={l.to}
-                end={l.to === '/'}
-                onClick={closeOffcanvas}
-                className={({ isActive }) => `vp-nav-mobile__link ${isActive ? 'is-active' : ''}`}
-              >
-                {l.label}
-              </NavLink>
-            ))}
-          </nav>
-        </div>
-      </div>
+        <nav className="vp-nav-mobile" aria-label="Mobile primary">
+          {NAV_LINKS.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.to === '/'}
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) => `vp-nav-mobile__link ${isActive ? 'is-active' : ''}`}
+            >
+              {l.label}
+              <i className="bi bi-chevron-right" aria-hidden="true" />
+            </NavLink>
+          ))}
+        </nav>
+      </aside>
     </header>
   );
 }
