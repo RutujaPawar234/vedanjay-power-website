@@ -35,6 +35,7 @@ export default function Header() {
   const transparent = onHome && !scrolled && !menuOpen;
 
   return (
+    <>
     <header className={`vp-header ${transparent ? 'vp-header--transparent' : 'vp-header--solid'}`}>
       <div className="container vp-header__inner">
         <NavLink to="/" className="vp-brand" aria-label="Vedanjay Power — Home">
@@ -69,8 +70,10 @@ export default function Header() {
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Mobile drawer (React-controlled, no Bootstrap JS) */}
+      {/* Mobile drawer — sibling of <header> (NOT inside it, so the header's
+          backdrop-filter can't trap this fixed element in the 76px bar). */}
       <div
         className={`vp-drawer__backdrop ${menuOpen ? 'is-open' : ''}`}
         onClick={() => setMenuOpen(false)}
@@ -79,6 +82,7 @@ export default function Header() {
       <aside
         id="vpMobileNav"
         className={`vp-drawer ${menuOpen ? 'is-open' : ''}`}
+        style={{ transform: menuOpen ? 'translateX(0)' : 'translateX(100%)' }}
         aria-label="Mobile navigation"
         aria-hidden={!menuOpen}
       >
@@ -108,6 +112,6 @@ export default function Header() {
           ))}
         </nav>
       </aside>
-    </header>
+    </>
   );
 }
