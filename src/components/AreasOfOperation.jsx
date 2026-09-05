@@ -4,24 +4,8 @@ export default function AreasOfOperation() {
   return (
     <section className="section section--mist" id="areas">
       <div className="container">
-        <div className="row g-5 align-items-center">
-          {/* Stylised India orientation panel (no precise coordinates) */}
-          <div className="col-lg-5 reveal-left">
-            <div className="areas-map" role="img" aria-label="Registered SLDC operations in three states with WRLDC regional registration across India">
-              <span className="areas-map__glow" aria-hidden="true" />
-              <i className="bi bi-geo-alt-fill areas-map__pin areas-map__pin--1" aria-hidden="true" />
-              <i className="bi bi-geo-alt-fill areas-map__pin areas-map__pin--2" aria-hidden="true" />
-              <i className="bi bi-geo-alt-fill areas-map__pin areas-map__pin--3" aria-hidden="true" />
-              <span className="areas-map__badge" aria-hidden="true">
-                <span className="areas-map__badge-num">3</span>
-                <span className="areas-map__badge-label">SLDC States</span>
-                <span className="areas-map__badge-sub">+ WRLDC Region</span>
-              </span>
-              <span className="areas-map__caption">Focused operations across India</span>
-            </div>
-          </div>
-
-          <div className="col-lg-7 reveal-right">
+        <div className="row g-5 align-items-center justify-content-center">
+          <div className="col-lg-10 reveal">
             <span className="eyebrow">Areas of Operation</span>
             <h2 className="section-title mt-2">Registered operations across key regions</h2>
             <div className="title-rule" />

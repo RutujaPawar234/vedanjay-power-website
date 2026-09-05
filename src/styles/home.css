@@ -1026,6 +1026,17 @@
 .ops-support__list li { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; color: var(--vp-ink); }
 .ops-support__list i { color: var(--vp-gold-500); font-size: 1.15rem; }
 
+/* Compact light-green CTA (overrides the shared gold button for this section only) */
+.ops-support__cta.btn-vp {
+  background: linear-gradient(135deg, var(--vp-green-400), var(--vp-green-600));
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(55, 165, 52, 0.26);
+}
+.ops-support__cta.btn-vp:hover {
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(55, 165, 52, 0.34);
+}
+
 .ops-monitor {
   position: relative;
   display: grid; place-items: center;

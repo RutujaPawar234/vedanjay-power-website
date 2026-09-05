@@ -3,7 +3,6 @@ import useReveal from '../hooks/useReveal.js';
 import SEO from '../components/SEO.jsx';
 
 import IndustriesHero from '../components/industries/IndustriesHero.jsx';
-import IndustriesOverview from '../components/industries/IndustriesOverview.jsx';
 import IndustrySegment from '../components/industries/IndustrySegment.jsx';
 import RenewableCapabilities from '../components/industries/RenewableCapabilities.jsx';
 import ServicesByApplication from '../components/industries/ServicesByApplication.jsx';
@@ -37,7 +36,6 @@ export default function Industries() {
         jsonLd={INDUSTRIES_JSONLD}
       />
       <IndustriesHero />
-      <IndustriesOverview />
       <IndustrySegment segment={SEGMENTS[0]} index={0} />
       <RenewableCapabilities />
       <IndustrySegment segment={SEGMENTS[1]} index={1} />

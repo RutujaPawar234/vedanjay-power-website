@@ -1,10 +1,15 @@
 import { COMPANY } from '../../data/homeData.js';
 
-// Address-based maps search (no invented coordinates or embedded map).
+// Address-based maps (no invented coordinates). Query is the office address,
+// so the embed and the "open" link both resolve via Google's own geocoding.
+const addressQuery = (lines) =>
+  encodeURIComponent('Vedanjay Power Pvt. Ltd., ' + lines.join(', '));
+
 const mapsUrl = (lines) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    'Vedanjay Power Pvt. Ltd., ' + lines.join(', ')
-  )}`;
+  `https://www.google.com/maps/search/?api=1&query=${addressQuery(lines)}`;
+
+const embedUrl = (lines) =>
+  `https://maps.google.com/maps?q=${addressQuery(lines)}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
 
 const OFFICES = [
   { label: 'Indore Corporate / Main Office', lines: COMPANY.offices.corporate.lines },
@@ -25,10 +30,16 @@ export default function ContactLocation() {
           {OFFICES.map((o, i) => (
             <div className="col-lg-6 reveal" style={{ '--d': `${i * 70}ms` }} key={o.label}>
               <article className="location-card">
-                {/* Map placeholder — ready for an approved map link/embed later. */}
-                <div className="location-card__map" role="img" aria-label={`Map location for ${o.label} — to be added`}>
-                  <i className="bi bi-geo-alt-fill" aria-hidden="true" />
-                  <span>Map location to be added</span>
+                {/* Embedded Google Map resolved from the office address. */}
+                <div className="location-card__map">
+                  <iframe
+                    className="location-card__mapframe"
+                    src={embedUrl(o.lines)}
+                    title={`Map of ${o.label}`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
                 </div>
                 <div className="location-card__body">
                   <h3 className="location-card__title">{o.label}</h3>

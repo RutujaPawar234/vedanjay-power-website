@@ -1,8 +1,21 @@
 import { Link } from 'react-router-dom';
+import HeroScene from '../HeroScene.jsx';
 
 export default function ServicesHero() {
   return (
-    <section className="about-hero about-hero--plain" aria-label="Vedanjay Power services">
+    <section className="about-hero" aria-label="Vedanjay Power services">
+      <div className="about-hero__bg" aria-hidden="true">
+        <HeroScene theme="grid" />
+        {/* Optional real image override: drop /images/services/hero.jpg */}
+        <img
+          className="about-hero__img"
+          src="/images/services/hero.jpg"
+          alt=""
+          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+        />
+        <span className="about-hero__overlay" />
+      </div>
+
       <div className="container about-hero__content">
         <nav className="breadcrumb-vp" aria-label="Breadcrumb">
           <Link to="/">Home</Link>

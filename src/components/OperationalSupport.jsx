@@ -27,7 +27,7 @@ export default function OperationalSupport() {
               <li><i className="bi bi-arrow-repeat" aria-hidden="true" /> Schedule revisions &amp; DSM tracking</li>
               <li><i className="bi bi-diagram-3" aria-hidden="true" /> SLDC / RLDC coordination</li>
             </ul>
-            <Link to="/services" className="btn-vp btn-vp-gold mt-2">
+            <Link to="/services" className="btn-vp btn-vp-sm ops-support__cta mt-2">
               QCA &amp; Forecasting Services
               <i className="bi bi-arrow-right" aria-hidden="true" />
             </Link>
