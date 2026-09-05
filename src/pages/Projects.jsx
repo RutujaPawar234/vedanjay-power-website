@@ -4,7 +4,6 @@ import SEO from '../components/SEO.jsx';
 
 import ProjectsHero from '../components/projects/ProjectsHero.jsx';
 import PortfolioOverview from '../components/projects/PortfolioOverview.jsx';
-import InfrastructurePortfolio from '../components/projects/InfrastructurePortfolio.jsx';
 import TechnicalCapabilities from '../components/projects/TechnicalCapabilities.jsx';
 import ExecutionCapabilities from '../components/projects/ExecutionCapabilities.jsx';
 import RenewablePortfolioContext from '../components/projects/RenewablePortfolioContext.jsx';
@@ -39,7 +38,6 @@ export default function Projects() {
       />
       <ProjectsHero />
       <PortfolioOverview />
-      <InfrastructurePortfolio />
       <TechnicalCapabilities />
       <ExecutionCapabilities />
       <RenewablePortfolioContext />

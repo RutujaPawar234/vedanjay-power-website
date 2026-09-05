@@ -6,7 +6,6 @@ import IndustriesHero from '../components/industries/IndustriesHero.jsx';
 import IndustrySegment from '../components/industries/IndustrySegment.jsx';
 import RenewableCapabilities from '../components/industries/RenewableCapabilities.jsx';
 import ServicesByApplication from '../components/industries/ServicesByApplication.jsx';
-import WhyIndustrySupport from '../components/industries/WhyIndustrySupport.jsx';
 import RelatedProjects from '../components/industries/RelatedProjects.jsx';
 import IndustriesCTA from '../components/industries/IndustriesCTA.jsx';
 
@@ -40,7 +39,6 @@ export default function Industries() {
       <RenewableCapabilities />
       <IndustrySegment segment={SEGMENTS[1]} index={1} />
       <ServicesByApplication />
-      <WhyIndustrySupport />
       <RelatedProjects />
       <IndustriesCTA />
     </main>

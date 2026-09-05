@@ -1,4 +1,3 @@
-import ServiceWorkflow from './ServiceWorkflow.jsx';
 import EnquiryButton from '../EnquiryButton.jsx';
 import { ENQUIRY_LABELS } from '../../data/enquiry.js';
 
@@ -72,13 +71,6 @@ export default function ServiceDetail({ service, index }) {
                 </div>
               </div>
             )}
-          </div>
-        )}
-
-        {/* Workflow */}
-        {service.workflow && (
-          <div className="mt-4 reveal">
-            <ServiceWorkflow steps={service.workflow} />
           </div>
         )}
 

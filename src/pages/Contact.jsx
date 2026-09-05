@@ -5,7 +5,6 @@ import { COMPANY } from '../data/homeData.js';
 
 import ContactHero from '../components/contact/ContactHero.jsx';
 import ContactInfo from '../components/contact/ContactInfo.jsx';
-import ContactServiceCards from '../components/contact/ContactServiceCards.jsx';
 import ContactForm from '../components/contact/ContactForm.jsx';
 import ContactLocation from '../components/contact/ContactLocation.jsx';
 import ContactFAQ from '../components/contact/ContactFAQ.jsx';
@@ -51,7 +50,6 @@ export default function Contact() {
       />
       <ContactHero />
       <ContactFAQ />
-      <ContactServiceCards />
       <ContactForm />
       <ContactInfo />
       <ContactLocation />

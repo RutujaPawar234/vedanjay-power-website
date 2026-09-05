@@ -3,7 +3,6 @@ import useReveal from '../hooks/useReveal.js';
 import SEO from '../components/SEO.jsx';
 
 import CareersHero from '../components/careers/CareersHero.jsx';
-import WhyWorkWithUs from '../components/careers/WhyWorkWithUs.jsx';
 import CareerAreas from '../components/careers/CareerAreas.jsx';
 import CurrentOpenings from '../components/careers/CurrentOpenings.jsx';
 import ApplicationForm from '../components/careers/ApplicationForm.jsx';
@@ -44,7 +43,6 @@ export default function Careers() {
         jsonLd={CAREERS_JSONLD}
       />
       <CareersHero />
-      <WhyWorkWithUs />
       <CareerAreas />
       <CurrentOpenings onApply={applyFor} />
       <ApplicationForm position={position} setPosition={setPosition} />

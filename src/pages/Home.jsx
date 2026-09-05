@@ -9,7 +9,6 @@ import PowerEcosystem from '../components/PowerEcosystem.jsx';
 import FeaturedServices from '../components/FeaturedServices.jsx';
 import WhyChooseUs from '../components/WhyChooseUs.jsx';
 import RenewableFocus from '../components/RenewableFocus.jsx';
-import OperationalSupport from '../components/OperationalSupport.jsx';
 import PartnerLogos from '../components/PartnerLogos.jsx';
 import CTASection from '../components/CTASection.jsx';
 
@@ -38,7 +37,6 @@ export default function Home() {
       <FeaturedServices />
       <WhyChooseUs />
       <RenewableFocus />
-      <OperationalSupport />
       <PartnerLogos />
       <CTASection />
     </main>

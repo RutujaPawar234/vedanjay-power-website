@@ -1,5 +1,4 @@
 import HeroScene from '../HeroScene.jsx';
-import ServiceWorkflow from '../services/ServiceWorkflow.jsx';
 
 /**
  * Reusable detailed industry segment. Alternates the visual side by index.
@@ -75,12 +74,6 @@ export default function IndustrySegment({ segment, index }) {
               </ul>
             </div>
           </div>
-        </div>
-
-        {/* Conceptual flow */}
-        <div className="mt-4 reveal">
-          <ServiceWorkflow steps={segment.flow} title={segment.flowTitle} />
-          <p className="segment-note"><i className="bi bi-info-circle" aria-hidden="true" /> {segment.flowNote}</p>
         </div>
       </div>
     </section>
