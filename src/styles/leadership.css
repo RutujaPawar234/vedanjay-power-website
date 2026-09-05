@@ -93,7 +93,19 @@
 }
 
 /* Real leadership photographs */
-.lead-profile__photo--img { padding: 0; height: 300px; background: var(--vp-mist); }
-.lead-profile__img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
-
+/* Photo tiles size to the full portrait (no cropping) — box grows to the
+   image height instead of clipping it at a fixed height. */
+.lead-profile__photo--img {
+  padding: 0;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  background: var(--vp-mist);
+}
+.lead-profile__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 .lead-profile__photo--img::after { display: none; }
