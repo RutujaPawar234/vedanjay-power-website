@@ -1023,6 +1023,10 @@
 
 /* Compact light-green CTA (overrides the shared gold button for this section only) */
 .ops-support__cta.btn-vp {
+  --_pad-y: 0.42rem;
+  --_pad-x: 0.9rem;
+  font-size: 0.82rem;
+  gap: 0.4rem;
   background: linear-gradient(135deg, var(--vp-green-400), var(--vp-green-600));
   color: #fff;
   box-shadow: 0 6px 16px rgba(55, 165, 52, 0.26);
