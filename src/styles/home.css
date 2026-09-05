@@ -474,26 +474,21 @@
 .why-figure__label { display: block; margin-top: 0.4rem; font-size: 1rem; color: rgba(255,255,255,0.92); }
 .why-figure__meta { display: block; margin-top: 0.5rem; font-size: 0.9rem; letter-spacing: 1px; color: var(--vp-teal-300); text-transform: uppercase; }
 
+/* Clean feature rows (not boxed cards) for a calmer, editorial layout. */
 .why-card {
   height: 100%;
-  display: flex; align-items: center; gap: 0.85rem;
-  background: #fff;
-  border: 1px solid var(--vp-line);
-  border-radius: 11px;
-  padding: 0.95rem 1rem;
-  transition: transform 0.25s var(--vp-ease), box-shadow 0.25s var(--vp-ease), border-color 0.25s var(--vp-ease);
+  display: flex; align-items: center; gap: 0.8rem;
+  padding: 0.7rem 0.2rem;
+  border-bottom: 1px solid var(--vp-line);
 }
-.why-card:hover { transform: translateY(-3px); box-shadow: var(--vp-shadow-sm); border-color: var(--vp-teal-300); }
 .why-card__icon {
   flex: 0 0 auto;
-  width: 40px; height: 40px;
+  width: 34px; height: 34px;
   display: grid; place-items: center;
-  border-radius: 10px;
-  background: var(--vp-mist);
-  color: var(--vp-green-700);
-  font-size: 1.1rem;
+  color: var(--vp-green-600);
+  font-size: 1.2rem;
 }
-.why-card__text { font-size: 0.96rem; font-weight: 700; color: var(--vp-ink); line-height: 1.25; }
+.why-card__text { font-size: 0.98rem; font-weight: 700; color: var(--vp-ink); line-height: 1.3; }
 
 /* ---------------------------------------------------------------
    STATISTICS

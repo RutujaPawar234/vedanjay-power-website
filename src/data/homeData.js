@@ -140,7 +140,7 @@ export const WHY_DIFFERENTIATORS = [
   { icon: 'bi-award', text: '15+ Years of Power-Sector Experience' },
   { icon: 'bi-geo-alt', text: 'Multi-State QCA / SLDC Operations' },
   { icon: 'bi-shield-check', text: 'WRLDC Registration' },
-  { icon: 'bi-cpu', text: 'AI/ML-Enabled Forecasting Technology' },
+  { icon: 'bi-cpu', text: 'AI/ML-Enabled Forecasting (with ENERCAST GmbH, Germany)' },
   { icon: 'bi-clock-history', text: '24×7 Operational Support' },
   { icon: 'bi-arrow-repeat', text: 'End-to-End Power Solutions' },
 ];
