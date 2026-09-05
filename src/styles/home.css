@@ -1013,7 +1013,7 @@
    24×7 OPERATIONAL SUPPORT
 --------------------------------------------------------------- */
 .ops-support {
-  background: linear-gradient(135deg, #ffffff 0%, #fff5e9 55%, #fde7cf 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #eaf7ea 55%, #d8f0d6 100%);
   color: var(--vp-ink); position: relative; overflow: hidden;
   padding: clamp(2.2rem, 3.6vw, 3.2rem) 0;
 }
@@ -1044,8 +1044,8 @@
   padding: 1.4rem;
   border-radius: var(--vp-radius-lg);
   background: #ffffff;
-  border: 1px solid #f5e3c7;
-  box-shadow: 0 14px 34px rgba(217, 164, 65, 0.14);
+  border: 1px solid #cdeccb;
+  box-shadow: 0 14px 34px rgba(55, 165, 52, 0.14);
 }
 /* Drop-in graphic override: /images/home/ops-24x7.png */
 .ops-monitor__img { width: 100%; max-width: 460px; height: auto; display: block; }
@@ -1065,7 +1065,7 @@
 }
 .ops-monitor__badge {
   font-size: 2rem; font-weight: 700;
-  color: var(--vp-gold-400);
+  color: var(--vp-green-500);
 }
 .ops-monitor__wave { width: 100%; max-width: 320px; height: 70px; }
 @keyframes vp-ring-pulse {
