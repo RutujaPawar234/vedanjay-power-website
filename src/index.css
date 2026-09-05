@@ -413,3 +413,60 @@ select:focus-visible,
   border-bottom-color: var(--vp-line);
 }
 :root[data-theme="dark"] .vp-drawer .vp-nav-mobile__link.is-active { color: var(--vp-green-400); }
+
+/* ============================================================
+   GLOBAL FLAT PASS
+   Calmer, more editorial look: no floating drop-shadows, no hover
+   lift, flat (chip-free) icons. Cards read as quiet panels separated
+   by hairline borders + whitespace instead of stacked glossy boxes.
+   ============================================================ */
+.eco-card, .why-card, .service-card, .svc-panel, .value-card, .phil-card,
+.achieve-card, .mission-card, .industry-card, .cap-card, .renew-card,
+.office-card, .contact-panel, .location-card, .faq-item, .enquiry-card,
+.opening-card, .lead-profile, .matrix__panel, .help-card, .story-panel,
+.segment-nrv, .area-card, .eco-step, .proj-cat, .pcat-card, .tech-card,
+.exec-card, .portfolio-record, .record-block, .portfolio-strip__item,
+.appmx__panel, .svc-nav__link, .client-tile, .contact-tile, .leader-card,
+.ops-node, .orgstr-item, .pf-state, .intro-visual__badge, .about-visual__badge,
+.partner-card {
+  box-shadow: none !important;
+}
+.eco-card:hover, .why-card:hover, .service-card:hover, .svc-panel:hover,
+.value-card:hover, .phil-card:hover, .achieve-card:hover, .mission-card:hover,
+.industry-card:hover, .cap-card:hover, .renew-card:hover, .office-card:hover,
+.location-card:hover, .faq-item:hover, .enquiry-card:hover, .opening-card:hover,
+.lead-profile:hover, .help-card:hover, .area-card:hover, .eco-step:hover,
+.proj-cat:hover, .pcat-card:hover, .tech-card:hover, .exec-card:hover,
+.client-tile:hover, .contact-tile:hover, .leader-card:hover, .ops-node:hover,
+.orgstr-item:hover, .pf-state:hover, .segment-nrv:hover, .industry-card:hover,
+.partner-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Flat icons — drop the coloured chip fill, keep a clean brand-green glyph */
+.achieve-card__icon, .area-card__icon, .cap-card__icon, .career-area__icon,
+.enquiry-card__icon, .exec-card__icon, .faq-item__icon, .help-card__icon,
+.ind-overview__icon, .industry-card__icon, .mission-card__icon,
+.opening-card__icon, .pcat-card__icon, .phil-card__icon, .proj-cat__icon,
+.renew-card__icon, .service-card__icon, .service-detail__icon, .tech-card__icon,
+.timeline-detail__icon, .value-card__icon, .eco-card__icon, .why-card__icon,
+.results-band__icon {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--vp-green-600) !important;
+}
+:root[data-theme="dark"] .achieve-card__icon, :root[data-theme="dark"] .area-card__icon,
+:root[data-theme="dark"] .cap-card__icon, :root[data-theme="dark"] .career-area__icon,
+:root[data-theme="dark"] .enquiry-card__icon, :root[data-theme="dark"] .exec-card__icon,
+:root[data-theme="dark"] .faq-item__icon, :root[data-theme="dark"] .help-card__icon,
+:root[data-theme="dark"] .ind-overview__icon, :root[data-theme="dark"] .industry-card__icon,
+:root[data-theme="dark"] .mission-card__icon, :root[data-theme="dark"] .opening-card__icon,
+:root[data-theme="dark"] .pcat-card__icon, :root[data-theme="dark"] .phil-card__icon,
+:root[data-theme="dark"] .proj-cat__icon, :root[data-theme="dark"] .renew-card__icon,
+:root[data-theme="dark"] .service-card__icon, :root[data-theme="dark"] .service-detail__icon,
+:root[data-theme="dark"] .tech-card__icon, :root[data-theme="dark"] .timeline-detail__icon,
+:root[data-theme="dark"] .value-card__icon, :root[data-theme="dark"] .eco-card__icon,
+:root[data-theme="dark"] .why-card__icon, :root[data-theme="dark"] .results-band__icon {
+  color: var(--vp-green-400) !important;
+}
