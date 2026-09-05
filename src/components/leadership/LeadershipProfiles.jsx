@@ -6,18 +6,20 @@ export default function LeadershipProfiles() {
       <div className="container">
         <div className="text-center reveal">
           <span className="eyebrow">Leadership Profiles</span>
-          <h2 className="section-title mt-2">Managing Directors</h2>
+          <h2 className="section-title mt-2">Our Leadership Team</h2>
           <div className="title-rule title-rule--center" />
         </div>
 
         <div className="row g-4 justify-content-center mt-2">
           {LEADERS.map((l) => (
-            <div className="col-sm-9 col-md-6 col-lg-5 reveal" key={l.name}>
+            <div className="col-sm-9 col-md-6 col-lg-4 reveal" key={l.name}>
               <article className="lead-profile">
-                {/* Polished placeholder — awaiting approved photograph. No AI portrait. */}
-                <div className="lead-profile__photo" role="img" aria-label={`${l.name} — photograph ${l.photoStatus}`}>
-                  <span className="lead-profile__initials" aria-hidden="true">{l.initials}</span>
-                  <span className="lead-profile__photo-status">Photograph {l.photoStatus}</span>
+                <div className="lead-profile__photo lead-profile__photo--img" role="img" aria-label={`Photograph of ${l.name}`}>
+                  {l.photo ? (
+                    <img className="lead-profile__img" src={l.photo} alt={l.name} loading="lazy" />
+                  ) : (
+                    <span className="lead-profile__initials" aria-hidden="true">{l.initials}</span>
+                  )}
                 </div>
 
                 <div className="lead-profile__body">

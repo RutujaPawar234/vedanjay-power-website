@@ -41,6 +41,10 @@ export default function ContactInfo() {
             <span className="contact-row__icon" aria-hidden="true"><i className="bi bi-telephone-fill" /></span>
             <span className="contact-row__text"><span className="contact-row__label">Call</span><span className="contact-row__value">{COMPANY.phone}</span></span>
           </a>
+          <a className="contact-row" href={`tel:+91${COMPANY.phoneOperations}`}>
+            <span className="contact-row__icon" aria-hidden="true"><i className="bi bi-telephone-outbound-fill" /></span>
+            <span className="contact-row__text"><span className="contact-row__label">Operations / F&amp;S Desk</span><span className="contact-row__value">{COMPANY.phoneOperations}</span></span>
+          </a>
           <a className="contact-row" href={wa} target="_blank" rel="noopener noreferrer">
             <span className="contact-row__icon contact-row__icon--wa" aria-hidden="true"><i className="bi bi-whatsapp" /></span>
             <span className="contact-row__text"><span className="contact-row__label">WhatsApp</span><span className="contact-row__value">{COMPANY.whatsapp}</span></span>
@@ -52,6 +56,10 @@ export default function ContactInfo() {
           <a className="contact-row" href={`mailto:${COMPANY.emailSupport}`}>
             <span className="contact-row__icon" aria-hidden="true"><i className="bi bi-headset" /></span>
             <span className="contact-row__text"><span className="contact-row__label">Support / Operations</span><span className="contact-row__value">{COMPANY.emailSupport}</span></span>
+          </a>
+          <a className="contact-row" href={`mailto:${COMPANY.emailOperations}`}>
+            <span className="contact-row__icon" aria-hidden="true"><i className="bi bi-envelope-paper-fill" /></span>
+            <span className="contact-row__text"><span className="contact-row__label">Operations / F&amp;S Email</span><span className="contact-row__value">{COMPANY.emailOperations}</span></span>
           </a>
           <a className="contact-row" href={COMPANY.linkedin} target="_blank" rel="noopener noreferrer">
             <span className="contact-row__icon" aria-hidden="true"><i className="bi bi-linkedin" /></span>

@@ -7,8 +7,10 @@
 
 export const CONTACT = {
   phone: '7666901814',
+  phoneOperations: '9981500612',
   emailGeneral: 'projects@vedanjay-power.com',
   emailSupport: 'forecasting.india@vedanjay-power.com',
+  emailOperations: 'operations.fns@vedanjay-power.com',
   linkedin: 'https://in.linkedin.com/company/vedanjay-power-private-limited',
 };
 
@@ -132,7 +134,7 @@ export const INTENTS = [
     id: 'contact',
     keywords: ['contact', 'reach', 'phone', 'call', 'email', 'whatsapp', 'address', 'office', 'talk to'],
     answer:
-      `You can reach Vedanjay Power at ${CONTACT.phone} (call/WhatsApp), ${CONTACT.emailGeneral} (general), or ${CONTACT.emailSupport} (support/operations). Corporate office: Indore, Madhya Pradesh; Branch: Pune, Maharashtra.`,
+      `You can reach Vedanjay Power at ${CONTACT.phone} (call/WhatsApp) or ${CONTACT.phoneOperations} (Operations / F&S desk). Email: ${CONTACT.emailGeneral} (general), ${CONTACT.emailSupport} (support), or ${CONTACT.emailOperations} (operations). Corporate office: Indore, Madhya Pradesh; Branch: Pune, Maharashtra.`,
     cta: { label: 'Contact Us', to: '/contact' },
   },
   {

@@ -9,20 +9,27 @@ import { COMPANY } from './homeData.js';
 export const LEADERS = [
   {
     name: 'Mr. Gajanan Yadav',
-    role: 'Managing Director (MD)',
+    role: 'Founder',
     initials: 'GY',
-    // Approved LinkedIn link provided in project information.
+    photo: '/images/leadership/gajanan-yadav.jpg',
     linkedin: COMPANY.linkedin,
     linkedinStatus: 'available',
-    photoStatus: 'To be attached',
   },
   {
-    name: 'Mrs. Anjaly Yadav',
-    role: 'Managing Director (MD)',
+    name: 'Mrs. Anjali Yadav',
+    role: 'Co-Founder',
     initials: 'AY',
+    photo: '/images/leadership/anjali-yadav.jpg',
     linkedin: null,
     linkedinStatus: 'To be provided',
-    photoStatus: 'To be attached',
+  },
+  {
+    name: 'Ms. Ankita Yadav',
+    role: 'Chief Executive Officer (CEO)',
+    initials: 'AY',
+    photo: '/images/leadership/ankita-yadav.jpg',
+    linkedin: null,
+    linkedinStatus: 'To be provided',
   },
 ];
 

@@ -70,6 +70,10 @@ export default function Footer() {
                 <a href={`tel:+91${COMPANY.phone}`}>{COMPANY.phone}</a>
               </li>
               <li>
+                <i className="bi bi-telephone-outbound" aria-hidden="true" />
+                <a href={`tel:+91${COMPANY.phoneOperations}`}>{COMPANY.phoneOperations} (Operations)</a>
+              </li>
+              <li>
                 <i className="bi bi-whatsapp" aria-hidden="true" />
                 <a href={`https://wa.me/91${COMPANY.whatsapp}`} target="_blank" rel="noopener noreferrer">
                   {COMPANY.whatsapp} (WhatsApp)
@@ -82,6 +86,10 @@ export default function Footer() {
               <li>
                 <i className="bi bi-headset" aria-hidden="true" />
                 <a href={`mailto:${COMPANY.emailSupport}`}>{COMPANY.emailSupport}</a>
+              </li>
+              <li>
+                <i className="bi bi-envelope-paper" aria-hidden="true" />
+                <a href={`mailto:${COMPANY.emailOperations}`}>{COMPANY.emailOperations}</a>
               </li>
               <li>
                 <i className="bi bi-globe" aria-hidden="true" />

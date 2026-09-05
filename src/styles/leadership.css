@@ -91,3 +91,9 @@
 @media (max-width: 575.98px) {
   .orgstr-grid { grid-template-columns: 1fr; }
 }
+
+/* Real leadership photographs */
+.lead-profile__photo--img { padding: 0; background: var(--vp-mist); }
+.lead-profile__img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+.lead-profile__photo--img::after { display: none; }

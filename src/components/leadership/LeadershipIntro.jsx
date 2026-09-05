@@ -8,7 +8,7 @@ export default function LeadershipIntro() {
             <h2 className="section-title mt-2">Steering a diversified power-sector company</h2>
             <div className="title-rule title-rule--center" />
             <p className="section-lead mx-auto">
-              Vedanjay Power Pvt. Ltd. is guided by its Managing Directors, whose leadership
+              Vedanjay Power Pvt. Ltd. is guided by its founders and leadership team, whose leadership
               supports the company's focus on renewable-energy operations, Forecasting &amp;
               Scheduling, open-access power, electrical infrastructure, and technical consultancy.
             </p>

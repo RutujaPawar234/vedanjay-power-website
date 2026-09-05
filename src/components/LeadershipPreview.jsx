@@ -17,11 +17,12 @@ export default function LeadershipPreview() {
               <article className="leader-card">
                 {/* Placeholder container — awaiting approved photograph.
                     No fabricated portrait is used. */}
-                <div className="leader-card__photo" role="img" aria-label={`${l.name} — photograph to be provided`}>
-                  <span className="leader-card__initials" aria-hidden="true">{l.initials}</span>
-                  <span className="leader-card__badge" aria-hidden="true">
-                    <i className="bi bi-person-badge" />
-                  </span>
+                <div className={`leader-card__photo ${l.photo ? 'leader-card__photo--img' : ''}`} role="img" aria-label={`Photograph of ${l.name}`}>
+                  {l.photo ? (
+                    <img className="leader-card__img" src={l.photo} alt={l.name} loading="lazy" />
+                  ) : (
+                    <span className="leader-card__initials" aria-hidden="true">{l.initials}</span>
+                  )}
                 </div>
                 <h3 className="leader-card__name">{l.name}</h3>
                 <p className="leader-card__role">{l.role}</p>

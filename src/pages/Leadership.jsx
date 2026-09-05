@@ -32,7 +32,7 @@ export default function Leadership() {
     <main id="main-content" ref={rootRef}>
       <SEO
         title="Leadership | Vedanjay Power Pvt. Ltd."
-        description="Meet the leadership of Vedanjay Power Pvt. Ltd. — Managing Directors guiding a diversified power-sector company across renewable energy, Forecasting & Scheduling, open access, electrical infrastructure, and grid consultancy."
+        description="Meet the leadership of Vedanjay Power Pvt. Ltd. — the founders and leadership team guiding a diversified power-sector company across renewable energy, Forecasting & Scheduling, open access, electrical infrastructure, and grid consultancy."
         canonical="https://vedanjay-power.com/leadership"
         jsonLd={LEADERSHIP_JSONLD}
       />

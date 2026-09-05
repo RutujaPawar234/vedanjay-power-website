@@ -11,9 +11,11 @@ export const COMPANY = {
   website: 'https://vedanjay-power.com/',
   linkedin: 'https://in.linkedin.com/company/vedanjay-power-private-limited',
   phone: '7666901814',
+  phoneOperations: '9981500612',
   whatsapp: '7666901814',
   emailGeneral: 'projects@vedanjay-power.com',
   emailSupport: 'forecasting.india@vedanjay-power.com',
+  emailOperations: 'operations.fns@vedanjay-power.com',
   offices: {
     corporate: {
       label: 'Corporate Office',
@@ -247,14 +249,23 @@ export const JOURNEY = {
 export const LEADERS = [
   {
     name: 'Mr. Gajanan Yadav',
-    role: 'Managing Director',
+    role: 'Founder',
     initials: 'GY',
+    photo: '/images/leadership/gajanan-yadav.jpg',
     linkedin: 'https://in.linkedin.com/company/vedanjay-power-private-limited',
   },
   {
-    name: 'Mrs. Anjaly Yadav',
-    role: 'Managing Director',
+    name: 'Mrs. Anjali Yadav',
+    role: 'Co-Founder',
     initials: 'AY',
+    photo: '/images/leadership/anjali-yadav.jpg',
+    linkedin: null,
+  },
+  {
+    name: 'Ms. Ankita Yadav',
+    role: 'Chief Executive Officer (CEO)',
+    initials: 'AY',
+    photo: '/images/leadership/ankita-yadav.jpg',
     linkedin: null,
   },
 ];
