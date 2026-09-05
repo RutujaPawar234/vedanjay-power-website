@@ -292,8 +292,8 @@ select:focus-visible,
   --vp-mist: #17271f;
   --vp-line: #27372e;
   --vp-ink: #e9f1ec;
-  --vp-ink-soft: #b6c6bd;
-  --vp-muted: #8a9d93;
+  --vp-ink-soft: #c2d1c9;
+  --vp-muted: #9fb3a8;
   --vp-surface: #14211b;
   --vp-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
   --vp-shadow-md: 0 12px 30px rgba(0, 0, 0, 0.45);
@@ -373,3 +373,43 @@ select:focus-visible,
 :root[data-theme="dark"] .area-card { background: var(--vp-surface); border-color: var(--vp-line); }
 :root[data-theme="dark"] .areas-map { background: linear-gradient(160deg, #16261f, #10201a); }
 :root[data-theme="dark"] .areas-map__caption { color: var(--vp-muted); }
+
+/* ---- Additional surfaces that stayed white in dark theme ---- */
+:root[data-theme="dark"] .eco-step,
+:root[data-theme="dark"] .proj-cat,
+:root[data-theme="dark"] .pcat-card,
+:root[data-theme="dark"] .tech-card,
+:root[data-theme="dark"] .exec-card,
+:root[data-theme="dark"] .portfolio-record,
+:root[data-theme="dark"] .record-block,
+:root[data-theme="dark"] .portfolio-strip__item,
+:root[data-theme="dark"] .appmx__row,
+:root[data-theme="dark"] .appmx__panel,
+:root[data-theme="dark"] .svc-nav__link {
+  background: var(--vp-surface);
+  border-color: var(--vp-line);
+  color: var(--vp-ink);
+}
+
+/* Green accent text (years, labels, table heads) — brighten so it stays
+   legible on the dark surface instead of the near-black brand green. */
+:root[data-theme="dark"] .intro-visual__badge-year,
+:root[data-theme="dark"] .about-visual__badge-year,
+:root[data-theme="dark"] .timeline__label,
+:root[data-theme="dark"] .appmx__cat,
+:root[data-theme="dark"] .pf-num,
+:root[data-theme="dark"] .pf-table th {
+  color: var(--vp-green-400);
+}
+
+/* Faint watermark numerals — flip from faint-dark to faint-light. */
+:root[data-theme="dark"] .mission-card__no { color: rgba(233, 241, 236, 0.16); }
+
+/* Mobile navigation drawer */
+:root[data-theme="dark"] .vp-offcanvas,
+:root[data-theme="dark"] .vp-drawer { background: var(--vp-surface); }
+:root[data-theme="dark"] .vp-drawer .vp-nav-mobile__link {
+  color: var(--vp-ink);
+  border-bottom-color: var(--vp-line);
+}
+:root[data-theme="dark"] .vp-drawer .vp-nav-mobile__link.is-active { color: var(--vp-green-400); }
