@@ -1,0 +1,79 @@
+/* ============================================================
+   Vedanjay Power — "Our Partners" logo marquee
+   Premium, light, green/teal accents. Motion pauses on hover;
+   reduced-motion users get a static grid.
+   ============================================================ */
+
+.partner-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2rem;
+  /* Soft fade at both edges so logos ease in/out of view. */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+
+.partner-marquee__track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  will-change: transform;
+  animation: vp-partner-scroll 60s linear infinite;
+}
+/* Track holds two copies of the list; shifting by -50% lands exactly on the
+   start of the second copy, so the loop is seamless (no jump). */
+@keyframes vp-partner-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pause + gentle emphasis on hover. */
+.partner-marquee:hover .partner-marquee__track { animation-play-state: paused; }
+
+.partner-card {
+  flex: 0 0 auto;
+  width: 190px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  padding: 0.9rem 1.1rem;
+  background: #fff;
+  border: 1px solid var(--vp-line);
+  border-radius: 14px;
+  transition: transform 0.28s var(--vp-ease), border-color 0.28s var(--vp-ease),
+    box-shadow 0.28s var(--vp-ease);
+}
+.partner-card__logo {
+  max-width: 100%;
+  max-height: 56px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.partner-marquee:hover .partner-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--vp-teal-500);
+  box-shadow: 0 8px 20px rgba(13, 92, 63, 0.12);
+}
+
+/* Static grid — only shown when motion is reduced. */
+.partner-grid { display: none; }
+
+@media (max-width: 575.98px) {
+  .partner-card { width: 44vw; height: 88px; padding: 0.7rem 0.85rem; }
+  .partner-card__logo { max-height: 46px; }
+  .partner-marquee__track { gap: 0.9rem; animation-duration: 48s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee { display: none; }
+  .partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .partner-grid .partner-card { width: auto; }
+}
