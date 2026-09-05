@@ -93,8 +93,12 @@
 }
 
 /* Real leadership photographs */
-/* Photo tiles size to the full portrait (no cropping) — box grows to the
-   image height instead of clipping it at a fixed height. */
+/* Smaller, tidy profile cards — full portrait shown (contain, no crop)
+   inside a compact fixed-height tile. */
+.lead-profiles-title { font-size: clamp(1.4rem, 1rem + 1.8vw, 2rem); }
+
+.lead-profile { max-width: 300px; margin-inline: auto; }
+
 .lead-profile__photo--img {
   padding: 0;
   height: auto;
@@ -104,7 +108,7 @@
 }
 .lead-profile__img {
   width: 100%;
-  height: auto;
+  height: 240px;
   display: block;
   object-fit: contain;
 }

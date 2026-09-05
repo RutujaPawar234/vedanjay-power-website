@@ -6,7 +6,7 @@ export default function LeadershipProfiles() {
       <div className="container">
         <div className="text-center reveal">
           <span className="eyebrow">Leadership Profiles</span>
-          <h2 className="section-title mt-2">Our Leadership Team</h2>
+          <h2 className="section-title lead-profiles-title mt-2">Our Leadership Team</h2>
           <div className="title-rule title-rule--center" />
         </div>
 
