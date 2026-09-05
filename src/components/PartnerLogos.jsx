@@ -31,7 +31,7 @@ export default function PartnerLogos() {
       <div className="container">
         <div className="text-center reveal">
           <span className="eyebrow">Our Partners</span>
-          <h2 className="section-title mt-2">Trusted by leaders across the power sector</h2>
+          <h2 className="section-title partners-title mt-2">Trusted by leaders across the power sector</h2>
           <div className="title-rule title-rule--center" />
         </div>
       </div>
