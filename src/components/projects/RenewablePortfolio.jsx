@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import useCountUp from '../../hooks/useCountUp.js';
+import IndiaPortfolioMap from './IndiaPortfolioMap.jsx';
 import {
   PORTFOLIO_PROJECTS,
   PORTFOLIO_BY_STATE,
@@ -47,24 +48,31 @@ export default function RenewablePortfolio() {
           </div>
         </div>
 
-        {/* Interactive by-state filter */}
-        <div className="pf-states" role="group" aria-label="Filter portfolio by state">
-          <button type="button" className={`pf-state ${active === 'all' ? 'is-active' : ''}`} onClick={() => setActive('all')}>
-            <span className="pf-state__name">All States</span>
-            <span className="pf-state__meta">{PORTFOLIO_COUNT} · {PORTFOLIO_TOTAL_MW} MW</span>
-          </button>
-          {PORTFOLIO_BY_STATE.map((s) => (
-            <button
-              key={s.state}
-              type="button"
-              className={`pf-state ${active === s.state ? 'is-active' : ''}`}
-              onClick={() => setActive(s.state)}
-              aria-pressed={active === s.state}
-            >
-              <span className="pf-state__name">{s.state}</span>
-              <span className="pf-state__meta">{s.count} · {s.mw} MW</span>
-            </button>
-          ))}
+        {/* Interactive India map — shaded by managed capacity, click to filter */}
+        <div className="row g-4 align-items-center mt-2">
+          <div className="col-lg-6">
+            <IndiaPortfolioMap active={active} onSelect={setActive} />
+          </div>
+          <div className="col-lg-6">
+            <div className="pf-states pf-states--stacked" role="group" aria-label="Filter portfolio by state">
+              <button type="button" className={`pf-state ${active === 'all' ? 'is-active' : ''}`} onClick={() => setActive('all')}>
+                <span className="pf-state__name">All States</span>
+                <span className="pf-state__meta">{PORTFOLIO_COUNT} · {PORTFOLIO_TOTAL_MW} MW</span>
+              </button>
+              {PORTFOLIO_BY_STATE.map((s) => (
+                <button
+                  key={s.state}
+                  type="button"
+                  className={`pf-state ${active === s.state ? 'is-active' : ''}`}
+                  onClick={() => setActive(s.state)}
+                  aria-pressed={active === s.state}
+                >
+                  <span className="pf-state__name">{s.state}</span>
+                  <span className="pf-state__meta">{s.count} · {s.mw} MW</span>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Project list */}
