@@ -4,15 +4,13 @@
    or LinkedIn profiles. No AI portraits of real people.
    ============================================================ */
 
-import { COMPANY } from './homeData.js';
-
 export const LEADERS = [
   {
     name: 'Mr. Gajanan Yadav',
     role: 'Founder',
     initials: 'GY',
     photo: '/images/leadership/gajanan-yadav.jpg',
-    linkedin: COMPANY.linkedin,
+    linkedin: 'https://www.linkedin.com/in/gajanan-yadav-645367154',
     linkedinStatus: 'available',
   },
   {

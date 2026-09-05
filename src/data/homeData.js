@@ -252,7 +252,7 @@ export const LEADERS = [
     role: 'Founder',
     initials: 'GY',
     photo: '/images/leadership/gajanan-yadav.jpg',
-    linkedin: 'https://in.linkedin.com/company/vedanjay-power-private-limited',
+    linkedin: 'https://www.linkedin.com/in/gajanan-yadav-645367154',
   },
   {
     name: 'Mrs. Anjali Yadav',
