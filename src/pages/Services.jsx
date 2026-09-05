@@ -3,8 +3,7 @@ import useReveal from '../hooks/useReveal.js';
 import SEO from '../components/SEO.jsx';
 
 import ServicesHero from '../components/services/ServicesHero.jsx';
-import ServiceNav from '../components/services/ServiceNav.jsx';
-import ServiceDetail from '../components/services/ServiceDetail.jsx';
+import ServicesExplorer from '../components/services/ServicesExplorer.jsx';
 import CapabilityMatrix from '../components/services/CapabilityMatrix.jsx';
 import WhyIntegrated from '../components/services/WhyIntegrated.jsx';
 import ServiceCTA from '../components/services/ServiceCTA.jsx';
@@ -38,10 +37,7 @@ export default function Services() {
         jsonLd={SERVICES_JSONLD}
       />
       <ServicesHero />
-      <ServiceNav />
-      {SERVICES.map((service, index) => (
-        <ServiceDetail key={service.id} service={service} index={index} />
-      ))}
+      <ServicesExplorer />
       <CapabilityMatrix />
       <WhyIntegrated />
       <ServiceCTA />

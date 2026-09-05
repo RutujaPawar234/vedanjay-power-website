@@ -420,8 +420,8 @@
   background: var(--vp-grad-green);
   box-shadow: 0 6px 14px rgba(13, 92, 63, 0.2);
 }
-.eco-step__label { display: block; font-size: 0.98rem; font-weight: 700; color: var(--vp-ink); line-height: 1.2; margin-bottom: 0.3rem; }
-.eco-step__text { display: block; font-size: 0.84rem; color: var(--vp-muted); line-height: 1.35; }
+.eco-step__label { display: block; font-size: 1.08rem; font-weight: 700; color: var(--vp-ink); line-height: 1.2; margin-bottom: 0.3rem; }
+.eco-step__text { display: block; font-size: 0.92rem; color: var(--vp-muted); line-height: 1.35; }
 
 /* Connector (horizontal by default) with a traveling energy pulse */
 .eco-step__connector {
@@ -452,16 +452,16 @@
    WHY CHOOSE US
 --------------------------------------------------------------- */
 .why-figure {
-  margin-top: 1.8rem;
-  padding: 1.3rem 1.5rem;
-  border-radius: var(--vp-radius-lg);
+  margin-top: 1.5rem;
+  padding: 0.95rem 1.2rem;
+  border-radius: var(--vp-radius);
   background: var(--vp-grad-deep);
   color: #fff;
   box-shadow: var(--vp-shadow-md);
 }
 .why-figure__value {
   display: block;
-  font-size: clamp(2.1rem, 4.4vw, 2.9rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
   font-weight: 700;
   line-height: 1;
   background: linear-gradient(90deg, #ffffff, #e6bb63, #ffffff);
@@ -494,11 +494,11 @@
    STATISTICS
 --------------------------------------------------------------- */
 .stats-band {
-  background: var(--vp-grad-deep);
+  background: linear-gradient(120deg, var(--vp-green-900) 0%, var(--vp-green-700) 55%, var(--vp-teal-600) 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
-  padding: clamp(2.4rem, 4vw, 3.6rem) 0;
+  padding: clamp(1.5rem, 2.6vw, 2.3rem) 0;
 }
 .stats-band::after {
   content: ''; position: absolute; inset: 0;
@@ -510,21 +510,27 @@
   pointer-events: none;
 }
 .stats-row { position: relative; z-index: 1; }
-.stat { text-align: center; padding: 1rem 0.5rem; position: relative; }
+.stat {
+  text-align: center; padding: 0.9rem 0.5rem; position: relative;
+  transition: transform 0.3s var(--vp-ease);
+}
+.stat:hover { transform: translateY(-5px); }
 .stat + .stat {}
 .stat__value {
-  font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+  font-size: clamp(2rem, 4.2vw, 2.9rem);
   font-weight: 700;
   line-height: 1;
   color: #fff;
   display: inline-flex; align-items: baseline; gap: 0.15rem;
+  transition: text-shadow 0.3s var(--vp-ease);
 }
+.stat:hover .stat__value { text-shadow: 0 4px 22px rgba(127, 214, 207, 0.55); }
 .stat--big .stat__value { color: var(--vp-gold-400); }
 .stat__suffix { font-size: 0.5em; font-weight: 700; }
 .stat__label {
-  margin-top: 0.6rem;
-  font-size: 0.94rem;
-  color: rgba(255,255,255,0.86);
+  margin-top: 0.55rem;
+  font-size: 1.04rem;
+  color: rgba(255,255,255,0.9);
   max-width: 22ch; margin-left: auto; margin-right: auto;
 }
 .stats-row .col-lg-3 { position: relative; }

@@ -14,9 +14,6 @@ export default function CoreValues() {
           {CORE_VALUES.map((v, i) => (
             <div className="col-sm-6 col-lg-4 reveal" style={{ '--d': `${i * 55}ms` }} key={v.title}>
               <article className="value-card">
-                <span className="value-card__icon" aria-hidden="true">
-                  <i className={`bi ${v.icon}`} />
-                </span>
                 <h3 className="value-card__title">{v.title}</h3>
                 <p className="value-card__text">{v.text}</p>
               </article>

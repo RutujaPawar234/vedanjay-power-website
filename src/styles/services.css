@@ -250,3 +250,55 @@ textarea.enquiry__input { resize: vertical; min-height: 96px; }
   .workflow__arrow { display: none; }
   .enquiry { padding: 1.3rem; }
 }
+
+/* ============================================================
+   Services explorer — vertical tab list + selected detail panel
+   ============================================================ */
+.svc-explorer {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.svc-explorer__nav { position: sticky; top: calc(var(--vp-header-h) + 1rem); }
+.svc-explorer__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.svc-explorer__item {
+  width: 100%;
+  display: flex; align-items: center; gap: 0.7rem;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--vp-line);
+  border-radius: 12px;
+  background: var(--vp-surface);
+  color: var(--vp-ink);
+  font-family: inherit; font-weight: 700; font-size: 0.98rem;
+  cursor: pointer;
+  transition: transform 0.25s var(--vp-ease), border-color 0.25s var(--vp-ease),
+    background 0.25s var(--vp-ease), color 0.25s var(--vp-ease), box-shadow 0.25s var(--vp-ease);
+}
+.svc-explorer__item:hover { border-color: var(--vp-green-500); transform: translateX(3px); }
+.svc-explorer__num { color: var(--vp-muted); font-size: 0.85rem; min-width: 1.4em; }
+.svc-explorer__title { flex: 1; line-height: 1.25; }
+.svc-explorer__arrow { color: var(--vp-muted); opacity: 0; transition: opacity 0.2s var(--vp-ease); }
+.svc-explorer__item:hover .svc-explorer__arrow { opacity: 1; }
+.svc-explorer__item.is-active {
+  background: var(--vp-grad-green);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(13, 92, 63, 0.22);
+}
+.svc-explorer__item.is-active .svc-explorer__num,
+.svc-explorer__item.is-active .svc-explorer__arrow { color: rgba(255, 255, 255, 0.9); opacity: 1; }
+
+.svc-explorer__panel { min-width: 0; animation: vp-svc-fade 0.35s var(--vp-ease); }
+.svc-explorer__panel .service-detail { padding: 0; }
+@keyframes vp-svc-fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 900px) {
+  .svc-explorer { grid-template-columns: 1fr; gap: 1.4rem; }
+  .svc-explorer__nav { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .svc-explorer__panel { animation: none; }
+  .svc-explorer__item:hover { transform: none; }
+}

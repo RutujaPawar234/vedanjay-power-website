@@ -43,7 +43,6 @@ export default function WhoWeAre() {
               ))}
             </ul>
             <p className="who-renewables">
-              <i className="bi bi-lightning-charge-fill" aria-hidden="true" />
               Supporting {RENEWABLE_TYPES.join(', ').replace(/,([^,]*)$/, ' and$1')}.
             </p>
           </div>

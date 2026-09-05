@@ -15,9 +15,6 @@ export default function MissionSection() {
             <div className="col-md-6" key={m.text}>
               <article className="mission-card reveal" style={{ '--d': `${i * 60}ms` }}>
                 <span className="mission-card__no" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-                <span className="mission-card__icon" aria-hidden="true">
-                  <i className={`bi ${m.icon}`} />
-                </span>
                 <p className="mission-card__text">{m.text}</p>
               </article>
             </div>

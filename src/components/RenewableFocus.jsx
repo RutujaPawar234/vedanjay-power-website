@@ -27,9 +27,6 @@ export default function RenewableFocus() {
                     loading="lazy"
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
-                  <span className="renew-card__icon">
-                    <i className={`bi ${r.icon}`} />
-                  </span>
                 </span>
                 <h3 className="renew-card__title">{r.title}</h3>
                 <p className="renew-card__text">{r.text}</p>
