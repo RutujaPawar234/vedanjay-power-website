@@ -271,3 +271,21 @@
 .pf-states--stacked { justify-content: flex-start; max-height: 520px; overflow-y: auto; padding-right: 0.2rem; }
 @media (max-width: 991.98px) { .pf-states--stacked { max-height: none; } }
 :root[data-theme="dark"] .india-map__bar { opacity: 0.9; }
+
+/* Client / partner logo wall (drop official PNGs into /images/clients) */
+.client-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem; margin-top: 2rem;
+}
+.client-tile {
+  display: grid; place-items: center; height: 92px; padding: 0.8rem 1rem;
+  background: #fff; border: 1px solid var(--vp-line); border-radius: var(--vp-radius);
+  box-shadow: var(--vp-shadow-sm);
+  transition: transform 0.25s var(--vp-ease), box-shadow 0.25s var(--vp-ease), border-color 0.25s var(--vp-ease);
+}
+.client-tile:hover { transform: translateY(-3px); box-shadow: var(--vp-shadow-md); border-color: var(--vp-teal-300); }
+.client-tile__logo { max-height: 56px; max-width: 100%; object-fit: contain; filter: grayscale(1); opacity: 0.85; transition: filter 0.25s var(--vp-ease), opacity 0.25s var(--vp-ease); }
+.client-tile:hover .client-tile__logo { filter: grayscale(0); opacity: 1; }
+.client-tile__name { font-weight: 700; font-size: 0.98rem; color: var(--vp-green-800); text-align: center; line-height: 1.2; }
+:root[data-theme="dark"] .client-tile { background: var(--vp-surface); border-color: var(--vp-line); }
+:root[data-theme="dark"] .client-tile__name { color: var(--vp-ink); }

@@ -9,6 +9,7 @@ import TechnicalCapabilities from '../components/projects/TechnicalCapabilities.
 import ExecutionCapabilities from '../components/projects/ExecutionCapabilities.jsx';
 import RenewablePortfolioContext from '../components/projects/RenewablePortfolioContext.jsx';
 import RenewablePortfolio from '../components/projects/RenewablePortfolio.jsx';
+import ClientLogos from '../components/projects/ClientLogos.jsx';
 import ProjectCategories from '../components/projects/ProjectCategories.jsx';
 import ProjectCaseStudyCard from '../components/projects/ProjectCaseStudyCard.jsx';
 import ProjectCTA from '../components/projects/ProjectCTA.jsx';
@@ -44,6 +45,7 @@ export default function Projects() {
       <ExecutionCapabilities />
       <RenewablePortfolioContext />
       <RenewablePortfolio />
+      <ClientLogos />
       <ProjectCategories />
 
       {/* Case studies — architecture ready; rendered only when approved data exists */}

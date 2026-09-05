@@ -61,3 +61,19 @@ export const PORTFOLIO_BY_STATE = (() => {
     .map((s) => ({ ...s, mw: Math.round(s.mw * 100) / 100 }))
     .sort((a, b) => b.mw - a.mw);
 })();
+
+// Unique portfolio clients / partners (from the "Our Projects" sheet).
+// `logo` points to an OFFICIAL asset to be dropped at
+// /public/images/clients/<slug>.png — never a fabricated/scraped logo.
+// Until a file exists, a name tile is shown.
+const CLIENT_NAMES = [
+  'Adani', 'Mundra Solar', 'OSEPL', 'FDIPL', 'Kilaj', 'CME', 'Virescent',
+  'Chandwasa PSS', 'GAIL India Ltd', 'UPC Renewable', 'AWEMPL', 'ZTRIC', 'SEIT',
+  'TATA Power', 'Fourth Patner Energy', 'Pick Renew', 'Hero', 'Sprng', 'SEMBCORP',
+  'Enrich', 'Juniper', 'Illios Power', 'Athena', 'Sirmour', 'SVKM', 'JSW',
+];
+
+export const CLIENTS = CLIENT_NAMES.map((name) => ({
+  name,
+  slug: name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+}));
