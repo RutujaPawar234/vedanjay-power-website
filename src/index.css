@@ -493,8 +493,8 @@ select:focus-visible,
    ============================================================ */
 #renewable-context.ops,
 #organizational-strength.ops {
-  /* fainter / softer orange */
-  background: linear-gradient(135deg, #b57a45 0%, #c9975d 55%, #ddb47e 100%);
+  /* olive green wash */
+  background: linear-gradient(135deg, #4f5e28 0%, #66753a 55%, #83924c 100%);
   padding-top: clamp(0.9rem, 1.7vw, 1.4rem);
   padding-bottom: clamp(0.9rem, 1.7vw, 1.4rem);
 }
