@@ -798,7 +798,7 @@
 .cta {
   position: relative; overflow: hidden;
   background: var(--vp-grad-deep); color: #fff;
-  padding: clamp(1.5rem, 2.6vw, 2.2rem) 0;
+  padding: clamp(1.2rem, 2.1vw, 1.8rem) 0;
 }
 .cta::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -814,9 +814,9 @@
 }
 .cta > .container { position: relative; z-index: 1; }
 .cta__inner { text-align: center; max-width: 780px; margin: 0 auto; }
-.cta__title { font-size: clamp(1.6rem, 3.4vw, 2.4rem); color: #fff; margin: 0.6rem 0 0.8rem; text-shadow: 0 2px 16px rgba(0,0,0,0.25); }
-.cta__text { font-size: clamp(1rem, 1.4vw, 1.15rem); color: rgba(255,255,255,0.9); margin: 0 auto 1.6rem; max-width: 60ch; }
-.cta__actions { display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; }
+.cta__title { font-size: clamp(1.35rem, 2.7vw, 1.95rem); color: #fff; margin: 0.3rem 0 0.5rem; line-height: 1.18; text-shadow: 0 2px 16px rgba(0,0,0,0.25); }
+.cta__text { font-size: clamp(0.98rem, 1.3vw, 1.1rem); line-height: 1.5; color: rgba(255,255,255,0.9); margin: 0 auto 1rem; max-width: 60ch; }
+.cta__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
 
 /* ---------------------------------------------------------------
    FOOTER
