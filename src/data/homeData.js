@@ -10,8 +10,7 @@ export const COMPANY = {
   established: '2011',
   website: 'https://vedanjay-power.com/',
   linkedin: 'https://in.linkedin.com/company/vedanjay-power-private-limited',
-  // TODO: replace with the official Vedanjay Power Facebook page URL.
-  facebook: 'https://www.facebook.com/',
+  facebook: 'https://www.facebook.com/people/Vedanjay-Power-Private-Limited/100061144302620/',
   phone: '7666901814',
   phoneOperations: '9981500612',
   whatsapp: '7666901814',
