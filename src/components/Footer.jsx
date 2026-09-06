@@ -24,8 +24,8 @@ export default function Footer() {
               <a href={COMPANY.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Vedanjay Power on LinkedIn">
                 <i className="bi bi-linkedin" aria-hidden="true" />
               </a>
-              <a href={COMPANY.website} target="_blank" rel="noopener noreferrer" aria-label="Vedanjay Power website">
-                <i className="bi bi-globe" aria-hidden="true" />
+              <a href={COMPANY.facebook} target="_blank" rel="noopener noreferrer" aria-label="Vedanjay Power on Facebook">
+                <i className="bi bi-facebook" aria-hidden="true" />
               </a>
               <a href={`https://wa.me/91${COMPANY.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Vedanjay Power">
                 <i className="bi bi-whatsapp" aria-hidden="true" />

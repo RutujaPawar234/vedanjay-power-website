@@ -177,7 +177,18 @@
 }
 
 /* ---------------- Vision ---------------- */
-.vision { position: relative; overflow: hidden; color: #fff; isolation: isolate; padding: clamp(2rem, 3.4vw, 3rem) 0; }
+.vision { position: relative; overflow: hidden; color: #fff; isolation: isolate; padding: clamp(1.4rem, 2.6vw, 2.2rem) 0; }
+.section-next {
+  display: inline-grid; place-items: center;
+  width: 44px; height: 44px; margin-top: 1.2rem;
+  border-radius: 50%; color: #fff; font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: transform 0.25s var(--vp-ease), background 0.25s var(--vp-ease);
+  animation: vp-next-bob 1.8s ease-in-out infinite;
+}
+.section-next:hover { background: var(--vp-gold-400); color: #4a2c05; transform: translateY(3px); }
+@keyframes vp-next-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .section-next { animation: none; } }
 .vision__bg { position: absolute; inset: 0; z-index: -2; background: var(--vp-grad-green); }
 .vision__bg .hero__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .vision__overlay {
@@ -278,3 +289,87 @@
   .eco-pipeline__step { border-radius: var(--vp-radius); }
   .timeline-detail { padding: 1.6rem 1.4rem 2rem; }
 }
+
+/* ============================================================
+   Horizontal milestone timeline (connected cards + flow strip)
+   ============================================================ */
+.htimeline {
+  margin-top: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0 1.2rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
+}
+.htimeline__track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  width: max-content;
+  min-height: 430px;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+}
+.htimeline__line {
+  position: absolute; left: 0; right: 0; top: 50%;
+  height: 4px; transform: translateY(-50%);
+  background: rgba(55, 165, 52, 0.22);
+  border-radius: 4px; overflow: hidden;
+}
+.htimeline__flow {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, var(--vp-green-500), var(--vp-teal-500), transparent);
+  background-size: 38% 100%; background-repeat: no-repeat;
+  animation: vp-htl-flow 3.2s linear infinite;
+}
+@keyframes vp-htl-flow {
+  from { background-position: -40% 0; }
+  to { background-position: 140% 0; }
+}
+
+.htimeline__item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 232px;
+  height: 430px;               /* full track; card sits in top or bottom half */
+}
+.htimeline__card {
+  position: absolute; left: 0; right: 0;
+  background: var(--vp-surface);
+  border: 1px solid var(--vp-line);
+  border-radius: var(--vp-radius);
+  padding: 0.9rem 1rem;
+  box-shadow: var(--vp-shadow-sm);
+  transition: transform 0.28s var(--vp-ease), box-shadow 0.28s var(--vp-ease), border-color 0.28s var(--vp-ease);
+}
+.htimeline__item--up .htimeline__card { bottom: calc(50% + 34px); }   /* above the line */
+.htimeline__item--down .htimeline__card { top: calc(50% + 34px); }    /* below the line */
+.htimeline__item:hover .htimeline__card {
+  transform: translateY(-4px);
+  border-color: var(--vp-green-500);
+  box-shadow: 0 14px 28px rgba(13, 92, 63, 0.16);
+}
+.htimeline__year { display: block; font-weight: 700; color: var(--vp-gold-500); font-size: 0.9rem; margin-bottom: 0.15rem; }
+.htimeline__title { font-size: 1.02rem; margin: 0 0 0.3rem; }
+.htimeline__text { font-size: 0.9rem; color: var(--vp-ink-soft); margin: 0; line-height: 1.4; }
+
+/* Connector stub from card to the central node */
+.htimeline__card::after {
+  content: ''; position: absolute; left: 50%; width: 2px; height: 34px;
+  background: var(--vp-green-500); transform: translateX(-50%);
+}
+.htimeline__item--up .htimeline__card::after { top: 100%; }
+.htimeline__item--down .htimeline__card::after { bottom: 100%; }
+
+/* Node dot centered on the line */
+.htimeline__node {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center; z-index: 2;
+  background: var(--vp-grad-green); color: #fff;
+  border: 3px solid var(--vp-off-white);
+  box-shadow: 0 4px 12px rgba(13, 92, 63, 0.3);
+}
+.htimeline__num { font-size: 0.85rem; font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) { .htimeline__flow { animation: none; } }

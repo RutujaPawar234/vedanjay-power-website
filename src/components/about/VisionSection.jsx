@@ -13,6 +13,9 @@ export default function VisionSection() {
           <span className="eyebrow eyebrow--light">Our Vision</span>
           <span className="vision__quote-mark" aria-hidden="true"><i className="bi bi-quote" /></span>
           <blockquote className="vision__text">{VISION}</blockquote>
+          <a className="section-next" href="#mission" aria-label="Go to the next section">
+            <i className="bi bi-chevron-down" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>

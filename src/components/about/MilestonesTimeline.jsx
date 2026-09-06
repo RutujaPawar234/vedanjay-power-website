@@ -1,10 +1,11 @@
-import { useState } from 'react';
 import { MILESTONES } from '../../data/aboutData.js';
 
+/**
+ * Horizontal, connected milestone timeline. All milestones sit on one
+ * left-to-right line (zig-zag cards), with an animated light strip flowing
+ * through the connecting line for a premium, dynamic feel.
+ */
 export default function MilestonesTimeline() {
-  const [active, setActive] = useState(0);
-  const current = MILESTONES[active];
-
   return (
     <section className="section section--mist" id="our-journey">
       <div className="container">
@@ -13,46 +14,29 @@ export default function MilestonesTimeline() {
           <h2 className="section-title mt-2">Major milestones since 2011</h2>
           <div className="title-rule title-rule--center" />
         </div>
+      </div>
 
-        <div className="row g-4 g-lg-5 mt-2 align-items-start">
-          {/* Interactive milestone rail */}
-          <div className="col-lg-5">
-            <ol className="timeline" aria-label="Company milestones">
-              {MILESTONES.map((m, i) => (
-                <li key={m.title} className="timeline__item">
-                  <button
-                    type="button"
-                    className={`timeline__node ${i === active ? 'is-active' : ''}`}
-                    onClick={() => setActive(i)}
-                    aria-pressed={i === active}
-                  >
-                    <span className="timeline__dot" aria-hidden="true">
-                      <i className={`bi ${m.icon}`} />
-                    </span>
-                    <span className="timeline__label">
-                      {m.year && <span className="timeline__year">{m.year}</span>}
-                      {m.title}
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ol>
+      <div className="htimeline reveal" role="list" aria-label="Company milestones">
+        <div className="htimeline__track">
+          <div className="htimeline__line" aria-hidden="true">
+            <span className="htimeline__flow" />
           </div>
-
-          {/* Detail panel */}
-          <div className="col-lg-7">
-            <div className="timeline-detail" key={active}>
-              <span className="timeline-detail__icon" aria-hidden="true">
-                <i className={`bi ${current.icon}`} />
-              </span>
-              {current.year && <span className="timeline-detail__year">{current.year}</span>}
-              <h3 className="timeline-detail__title">{current.title}</h3>
-              <p className="timeline-detail__text">{current.desc}</p>
-              <span className="timeline-detail__count">
-                {String(active + 1).padStart(2, '0')} / {String(MILESTONES.length).padStart(2, '0')}
+          {MILESTONES.map((m, i) => (
+            <div
+              className={`htimeline__item ${i % 2 ? 'htimeline__item--down' : 'htimeline__item--up'}`}
+              role="listitem"
+              key={m.title}
+            >
+              <div className="htimeline__card">
+                {m.year && <span className="htimeline__year">{m.year}</span>}
+                <h3 className="htimeline__title">{m.title}</h3>
+                <p className="htimeline__text">{m.desc}</p>
+              </div>
+              <span className="htimeline__node" aria-hidden="true">
+                <span className="htimeline__num">{i + 1}</span>
               </span>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
