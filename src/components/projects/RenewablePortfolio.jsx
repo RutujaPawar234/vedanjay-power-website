@@ -8,8 +8,6 @@ import {
   PORTFOLIO_COUNT,
 } from '../../data/portfolioData.js';
 
-const techIcon = { Solar: 'bi-sun', Wind: 'bi-wind', Renewable: 'bi-lightning-charge' };
-
 export default function RenewablePortfolio() {
   const [active, setActive] = useState('all');
   const [countDisplay, countRef] = useCountUp(5509.18, { duration: 1600, decimals: 0 });
@@ -95,7 +93,7 @@ export default function RenewablePortfolio() {
                 <tr key={p.name}>
                   <td data-label="Project">{p.name}</td>
                   <td data-label="Technology">
-                    <span className="pf-tech"><i className={`bi ${techIcon[p.tech]}`} aria-hidden="true" /> {p.tech}</span>
+                    <span className="pf-tech">{p.tech}</span>
                   </td>
                   <td data-label="Capacity (MW)" className="pf-num">{p.mw}</td>
                   <td data-label="Location">{p.state}</td>

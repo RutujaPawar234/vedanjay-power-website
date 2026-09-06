@@ -40,9 +40,9 @@ export default function Projects() {
       <PortfolioOverview />
       <TechnicalCapabilities />
       <ExecutionCapabilities />
-      <RenewablePortfolioContext />
       <RenewablePortfolio />
       <ProjectCategories />
+      <RenewablePortfolioContext />
 
       {/* Case studies — architecture ready; rendered only when approved data exists */}
       {CASE_STUDIES.length > 0 && (

@@ -57,7 +57,7 @@
 .chip-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 1rem 0 1.2rem; }
 .who-renewables {
   display: flex; align-items: center; gap: 0.5rem;
-  font-weight: 700; color: var(--vp-ink); margin: 0.6rem 0 0;
+  font-weight: 700; color: var(--vp-green-700); margin: 0.6rem 0 0;
 }
 
 /* ---------------- About visual frame (reused HeroScene) ---------------- */
@@ -201,7 +201,22 @@
   overflow: hidden;
   transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease), border-color 0.3s var(--vp-ease);
 }
-.mission-card:hover { transform: translateY(-4px); box-shadow: var(--vp-shadow-md); border-color: transparent; }
+/* Static card — corner accents extend on hover (green + teal). */
+.mission-card::before, .mission-card::after {
+  content: ''; position: absolute; width: 16px; height: 16px; pointer-events: none;
+  transition: width 0.4s var(--vp-ease), height 0.4s var(--vp-ease);
+}
+.mission-card::before {
+  top: -1px; left: -1px;
+  border-top: 3px solid var(--vp-green-500); border-left: 3px solid var(--vp-green-500);
+  border-top-left-radius: var(--vp-radius);
+}
+.mission-card::after {
+  bottom: -1px; right: -1px;
+  border-bottom: 3px solid var(--vp-teal-500); border-right: 3px solid var(--vp-teal-500);
+  border-bottom-right-radius: var(--vp-radius);
+}
+.mission-card:hover::before, .mission-card:hover::after { width: 55%; height: 55%; }
 .mission-card__no {
   position: absolute; right: 1rem; top: 0.6rem;
   font-size: 2rem; font-weight: 700; color: var(--vp-mist);
@@ -213,14 +228,8 @@
   box-shadow: 0 8px 18px rgba(13, 92, 63, 0.2);
 }
 .mission-card__text { position: relative; z-index: 1; margin: 0; font-size: 1.1rem; line-height: 1.5; color: var(--vp-ink-soft); }
-/* Attractive hover (overrides the global flat pass for this section) */
 #mission .mission-card { cursor: default; }
-#mission .mission-card:hover {
-  transform: translateY(-6px) !important;
-  box-shadow: 0 16px 34px rgba(13, 92, 63, 0.18) !important;
-  border-color: var(--vp-green-500) !important;
-}
-#mission .mission-card:hover .mission-card__no { color: var(--vp-green-400); }
+#mission .mission-card:hover { transform: none !important; box-shadow: var(--vp-shadow-sm) !important; }
 
 /* ---------------- Core values ---------------- */
 .value-card {
@@ -231,6 +240,16 @@
 }
 .value-card__title { font-size: 1.14rem; margin-bottom: 0.3rem; }
 .value-card__text { font-size: 1rem; color: var(--vp-ink-soft); margin: 0; }
+/* Cursor spotlight — card stays static, a soft light follows the cursor. */
+.value-card--spotlight { position: relative; overflow: hidden; }
+.value-card--spotlight > * { position: relative; z-index: 1; }
+.value-card--spotlight::before {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(190px circle at var(--mx, 50%) var(--my, 50%), rgba(55, 165, 52, 0.16), transparent 68%);
+  opacity: 0; transition: opacity 0.3s var(--vp-ease);
+}
+.value-card--spotlight:hover::before { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .value-card--spotlight::before { display: none; } }
 
 /* ---------------- Achievements ---------------- */
 .achieve-card {

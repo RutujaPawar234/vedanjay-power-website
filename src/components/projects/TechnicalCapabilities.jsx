@@ -39,7 +39,6 @@ export default function TechnicalCapabilities() {
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                   <span className="tech-card__media-overlay" aria-hidden="true" />
-                  <span className="tech-card__icon" aria-hidden="true"><i className={`bi ${cat.icon}`} /></span>
                 </div>
                 <div className="tech-card__body">
                   <h3 className="tech-card__title">{cat.category}</h3>

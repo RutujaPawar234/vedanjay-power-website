@@ -1,5 +1,11 @@
 import { CORE_VALUES } from '../../data/aboutData.js';
 
+function handleSpotlight(e) {
+  const r = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`);
+  e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`);
+}
+
 export default function CoreValues() {
   return (
     <section className="section section--mist" id="core-values">
@@ -13,7 +19,7 @@ export default function CoreValues() {
         <div className="row g-4 mt-2">
           {CORE_VALUES.map((v, i) => (
             <div className="col-sm-6 col-lg-4 reveal" style={{ '--d': `${i * 55}ms` }} key={v.title}>
-              <article className="value-card">
+              <article className="value-card value-card--spotlight" onMouseMove={handleSpotlight}>
                 <h3 className="value-card__title">{v.title}</h3>
                 <p className="value-card__text">{v.text}</p>
               </article>

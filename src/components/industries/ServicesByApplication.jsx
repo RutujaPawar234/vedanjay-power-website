@@ -7,7 +7,7 @@ function Cell({ items }) {
   return (
     <ul className="appmx__list">
       {items.map((it) => (
-        <li key={it}><i className="bi bi-check2-circle" aria-hidden="true" />{it}</li>
+        <li key={it}>{it}</li>
       ))}
     </ul>
   );
@@ -30,14 +30,13 @@ export default function ServicesByApplication() {
         <div className="appmx reveal" role="table" aria-label="Relevant support areas by industry">
           <div className="appmx__head" role="row">
             <span role="columnheader">Category</span>
-            <span role="columnheader"><i className="bi bi-sun" aria-hidden="true" /> {APPLICATION_INDUSTRIES[0]}</span>
-            <span role="columnheader"><i className="bi bi-buildings" aria-hidden="true" /> {APPLICATION_INDUSTRIES[1]}</span>
+            <span role="columnheader">{APPLICATION_INDUSTRIES[0]}</span>
+            <span role="columnheader">{APPLICATION_INDUSTRIES[1]}</span>
           </div>
 
           {APPLICATION_MATRIX.map((row) => (
             <div className="appmx__row" role="row" key={row.category}>
               <div className="appmx__cat" role="rowheader">
-                <span className="appmx__cat-icon" aria-hidden="true"><i className={`bi ${row.icon}`} /></span>
                 {row.category}
               </div>
               <div className="appmx__cell" role="cell" data-label="Renewable Energy">
@@ -49,7 +48,6 @@ export default function ServicesByApplication() {
             </div>
           ))}
         </div>
-        <p className="appmx__legend">“Relevant Support Areas” indicate where a capability may apply — not a guarantee or requirement.</p>
       </div>
     </section>
   );

@@ -15,12 +15,11 @@ export default function ProjectCategories() {
             <div className="col-md-6 col-lg-4 reveal" style={{ '--d': `${i * 55}ms` }} key={cat.title}>
               <article className="pcat-card">
                 <div className="pcat-card__head">
-                  <span className="pcat-card__icon" aria-hidden="true"><i className={`bi ${cat.icon}`} /></span>
                   <h3 className="pcat-card__title">{cat.title}</h3>
                 </div>
                 <ul className="pcat-card__list">
                   {cat.items.map((it) => (
-                    <li key={it}><i className="bi bi-dot" aria-hidden="true" />{it}</li>
+                    <li key={it}>{it}</li>
                   ))}
                 </ul>
               </article>

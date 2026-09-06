@@ -76,12 +76,19 @@
 
 /* ---------------- Renewable capability cards ---------------- */
 .cap-card {
+  position: relative; overflow: hidden;
   height: 100%; display: flex; gap: 1rem;
   background: #fff; border: 1px solid var(--vp-line);
   border-radius: var(--vp-radius); padding: 1.4rem 1.5rem;
   transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease), border-color 0.3s var(--vp-ease);
 }
-.cap-card:hover { transform: translateY(-4px); box-shadow: var(--vp-shadow-md); border-color: transparent; }
+.cap-card::after {
+  content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px;
+  background: var(--vp-grad-green); transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.32s var(--vp-ease);
+}
+.cap-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(13, 92, 63, 0.16); border-color: var(--vp-green-500); }
+.cap-card:hover::after { transform: scaleY(1); }
 .cap-card__icon {
   flex: 0 0 auto; width: 52px; height: 52px;
   display: grid; place-items: center; border-radius: 13px;
@@ -146,19 +153,18 @@
 /* ---------------- Related project categories ---------------- */
 .proj-cat {
   height: 100%;
-  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.7rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.7rem;
   background: #fff; border: 1px solid var(--vp-line);
-  border-radius: var(--vp-radius); padding: 1.4rem 1rem;
-  transition: transform 0.25s var(--vp-ease), box-shadow 0.25s var(--vp-ease), border-color 0.25s var(--vp-ease);
+  border-radius: var(--vp-radius); padding: 1.5rem 1.1rem;
+  transition: transform 0.25s var(--vp-ease), box-shadow 0.25s var(--vp-ease), border-color 0.25s var(--vp-ease), background 0.25s var(--vp-ease);
 }
-.proj-cat:hover { transform: translateY(-4px); box-shadow: var(--vp-shadow-md); border-color: var(--vp-teal-300); }
-.proj-cat__icon {
-  width: 54px; height: 54px; display: grid; place-items: center; border-radius: 14px;
-  background: var(--vp-mist); color: var(--vp-green-700); font-size: 1.4rem;
-  transition: background 0.25s var(--vp-ease), color 0.25s var(--vp-ease);
+.proj-cat:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 30px rgba(13, 92, 63, 0.16);
+  border-color: var(--vp-green-500);
+  background: linear-gradient(160deg, #ffffff, #eef7ee);
 }
-.proj-cat:hover .proj-cat__icon { background: var(--vp-grad-green); color: #fff; }
-.proj-cat__text { font-weight: 700; font-size: 0.98rem; color: var(--vp-ink); }
+.proj-cat__text { font-weight: 700; font-size: 1.08rem; color: var(--vp-ink); }
 
 /* ---------------- Responsive ---------------- */
 @media (max-width: 991.98px) {

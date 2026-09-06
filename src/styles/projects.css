@@ -160,19 +160,15 @@
   height: 100%;
   background: #fff; border: 1px solid var(--vp-line);
   border-top: 4px solid var(--vp-green-600);
-  border-radius: var(--vp-radius); padding: 1.5rem;
+  border-radius: var(--vp-radius); padding: 1.1rem 1.15rem;
   transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease);
 }
 .pcat-card:hover { transform: translateY(-4px); box-shadow: var(--vp-shadow-md); }
-.pcat-card__head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem; }
-.pcat-card__icon {
-  width: 48px; height: 48px; flex: 0 0 auto; display: grid; place-items: center;
-  border-radius: 12px; background: var(--vp-grad-green); color: #fff; font-size: 1.25rem;
-}
+.pcat-card__head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.7rem; }
 .pcat-card__title { font-size: 1.1rem; margin: 0; }
 .pcat-card__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
-.pcat-card__list li { display: flex; align-items: center; gap: 0.3rem; font-size: 0.96rem; color: var(--vp-ink-soft); }
-.pcat-card__list li i { color: var(--vp-teal-500); font-size: 1.1rem; }
+.pcat-card__list li { display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; color: var(--vp-ink-soft); }
+.pcat-card__list li::before { content: ''; flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--vp-teal-500); }
 
 /* ---------------- Case study card (future) ---------------- */
 .case-card {

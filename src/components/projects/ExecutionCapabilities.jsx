@@ -14,7 +14,6 @@ export default function ExecutionCapabilities() {
           {EXECUTION_CAPABILITIES.map((c, i) => (
             <div className="col-md-6 reveal" style={{ '--d': `${i * 60}ms` }} key={c.title}>
               <article className="exec-card">
-                <span className="exec-card__icon" aria-hidden="true"><i className={`bi ${c.icon}`} /></span>
                 <div>
                   <h3 className="exec-card__title">{c.title}</h3>
                   <p className="exec-card__text">{c.text}</p>

@@ -14,7 +14,6 @@ export default function MissionSection() {
           {MISSION.map((m, i) => (
             <div className="col-md-6" key={m.text}>
               <article className="mission-card reveal" style={{ '--d': `${i * 60}ms` }}>
-                <span className="mission-card__no" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
                 <p className="mission-card__text">{m.text}</p>
               </article>
             </div>

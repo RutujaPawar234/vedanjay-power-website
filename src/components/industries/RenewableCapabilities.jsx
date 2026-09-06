@@ -14,9 +14,6 @@ export default function RenewableCapabilities() {
           {RENEWABLE_CAPABILITIES.map((c, i) => (
             <div className={`col-md-6 ${i === 4 ? 'col-lg-12' : 'col-lg-6'} reveal`} style={{ '--d': `${i * 60}ms` }} key={c.title}>
               <article className={`cap-card ${i === 4 ? 'cap-card--wide' : ''}`}>
-                <span className="cap-card__icon" aria-hidden="true">
-                  <i className={`bi ${c.icon}`} />
-                </span>
                 <div>
                   <h3 className="cap-card__title">{c.title}</h3>
                   <p className="cap-card__text">{c.text}</p>

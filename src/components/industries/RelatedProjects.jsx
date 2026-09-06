@@ -15,7 +15,6 @@ export default function RelatedProjects() {
           {RELATED_PROJECTS.map((p, i) => (
             <div className="col-6 col-md-4 col-lg-3 reveal" style={{ '--d': `${i * 55}ms` }} key={p.text}>
               <div className="proj-cat">
-                <span className="proj-cat__icon" aria-hidden="true"><i className={`bi ${p.icon}`} /></span>
                 <span className="proj-cat__text">{p.text}</span>
               </div>
             </div>

@@ -20,19 +20,12 @@ export default function WhyIntegrated() {
             </div>
           </div>
 
-          <div className="col-lg-7">
-            <div className="row g-3">
-              {INTEGRATED_STRENGTHS.map((s, i) => (
-                <div className="col-sm-6" key={s.text}>
-                  <div className="why-card reveal" style={{ '--d': `${i * 45}ms` }}>
-                    <span className="why-card__icon" aria-hidden="true">
-                      <i className={`bi ${s.icon}`} />
-                    </span>
-                    <span className="why-card__text">{s.text}</span>
-                  </div>
-                </div>
+          <div className="col-lg-7 reveal-right">
+            <ul className="why-pills" aria-label="Integrated strengths">
+              {INTEGRATED_STRENGTHS.map((s) => (
+                <li className="why-pill" key={s.text}>{s.text}</li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
