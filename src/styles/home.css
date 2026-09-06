@@ -499,7 +499,7 @@
   color: #fff;
   position: relative;
   overflow: hidden;
-  padding: clamp(1.5rem, 2.6vw, 2.3rem) 0;
+  padding: clamp(0.9rem, 1.8vw, 1.4rem) 0;
 }
 .stats-band::after {
   content: ''; position: absolute; inset: 0;
@@ -512,10 +512,10 @@
 }
 .stats-row { position: relative; z-index: 1; }
 .stat {
-  text-align: center; padding: 0.9rem 0.5rem; position: relative;
+  text-align: center; padding: 0.4rem 0.5rem; position: relative;
   transition: transform 0.3s var(--vp-ease);
 }
-.stat:hover { transform: translateY(-5px); }
+.stat:hover { transform: translateY(-4px); }
 .stat + .stat {}
 .stat__value {
   font-size: clamp(2rem, 4.2vw, 2.9rem);
@@ -523,9 +523,10 @@
   line-height: 1;
   color: #fff;
   display: inline-flex; align-items: baseline; gap: 0.15rem;
+  text-shadow: 0 2px 14px rgba(127, 214, 207, 0.35);
   transition: text-shadow 0.3s var(--vp-ease);
 }
-.stat:hover .stat__value { text-shadow: 0 4px 22px rgba(127, 214, 207, 0.55); }
+.stat:hover .stat__value { text-shadow: 0 4px 24px rgba(127, 214, 207, 0.65); }
 .stat--big .stat__value { color: var(--vp-gold-400); }
 .stat__suffix { font-size: 0.5em; font-weight: 700; }
 .stat__label {
@@ -544,8 +545,8 @@
 .stats-meta {
   position: relative; z-index: 1;
   list-style: none; padding: 0;
-  margin: 2.2rem auto 0;
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem 1.4rem;
+  margin: 1.1rem auto 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem 1.2rem;
 }
 .stats-meta li {
   display: inline-flex; align-items: center; gap: 0.5rem;
