@@ -493,12 +493,32 @@ select:focus-visible,
    ============================================================ */
 #renewable-context.ops,
 #organizational-strength.ops {
-  background: linear-gradient(135deg, #a85f26 0%, #bd7a34 55%, #cf9147 100%);
-  padding-top: clamp(1.3rem, 2.4vw, 2rem);
-  padding-bottom: clamp(1.3rem, 2.4vw, 2rem);
+  /* fainter / softer orange */
+  background: linear-gradient(135deg, #b57a45 0%, #c9975d 55%, #ddb47e 100%);
+  padding-top: clamp(0.9rem, 1.7vw, 1.4rem);
+  padding-bottom: clamp(0.9rem, 1.7vw, 1.4rem);
 }
 #renewable-context .context-figure,
-#organizational-strength .context-figure { margin: 1rem 0; padding: 1rem 1.2rem; }
+#organizational-strength .context-figure { margin: 0.7rem 0; padding: 0.75rem 1rem; }
+#renewable-context .context-subtitle,
+#organizational-strength .context-subtitle { margin-bottom: 0.6rem; }
+#renewable-context .title-rule,
+#organizational-strength .title-rule { margin: 0.55rem 0 0.7rem; }
+/* Compact capability pills / grid */
+#renewable-context .context-caps,
+#organizational-strength .orgstr-grid { gap: 0.5rem; }
+#renewable-context .context-caps__item,
+#organizational-strength .orgstr-item { padding: 0.45rem 0.8rem; }
+/* Tighten the left column so the band stays compact */
+#renewable-context .ops__title, #renewable-context .section-title,
+#organizational-strength .ops__title, #organizational-strength .section-title {
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem); margin-bottom: 0;
+}
+#renewable-context .ops__lead, #renewable-context .section-lead,
+#organizational-strength .ops__lead, #organizational-strength .section-lead {
+  font-size: 0.98rem; margin-bottom: 0.4rem;
+}
+#renewable-context .row, #organizational-strength .row { align-items: center; }
 #renewable-context .context-figure__value,
 #organizational-strength .context-figure__value { font-size: clamp(1.7rem, 3.6vw, 2.3rem); color: #fff; }
 #renewable-context .context-figure__areas,
