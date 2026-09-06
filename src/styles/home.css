@@ -797,8 +797,8 @@
 --------------------------------------------------------------- */
 .cta {
   position: relative; overflow: hidden;
-  /* fainter / lighter green wash */
-  background: linear-gradient(135deg, var(--vp-green-700) 0%, var(--vp-green-600) 55%, var(--vp-green-500) 100%);
+  /* light green wash */
+  background: linear-gradient(135deg, var(--vp-green-600) 0%, var(--vp-green-500) 55%, var(--vp-green-400) 100%);
   color: #fff;
   padding: clamp(0.9rem, 1.7vw, 1.4rem) 0;
 }
