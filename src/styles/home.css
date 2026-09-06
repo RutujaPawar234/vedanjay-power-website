@@ -797,8 +797,10 @@
 --------------------------------------------------------------- */
 .cta {
   position: relative; overflow: hidden;
-  background: var(--vp-grad-deep); color: #fff;
-  padding: clamp(1.2rem, 2.1vw, 1.8rem) 0;
+  /* fainter / lighter green wash */
+  background: linear-gradient(135deg, var(--vp-green-700) 0%, var(--vp-green-600) 55%, var(--vp-green-500) 100%);
+  color: #fff;
+  padding: clamp(0.9rem, 1.7vw, 1.4rem) 0;
 }
 .cta::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
