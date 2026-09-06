@@ -299,21 +299,23 @@ select:focus-visible,
 :root { --vp-surface: #ffffff; }
 
 :root[data-theme="dark"] {
-  --vp-bg: #0b1512;
-  --vp-off-white: #10201a;
-  --vp-mist: #17271f;
-  --vp-line: #27372e;
-  --vp-ink: #e9f1ec;
-  --vp-ink-soft: #c2d1c9;
-  --vp-muted: #9fb3a8;
-  --vp-surface: #14211b;
-  --vp-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
-  --vp-shadow-md: 0 12px 30px rgba(0, 0, 0, 0.45);
-  --vp-shadow-lg: 0 22px 50px rgba(0, 0, 0, 0.55);
+  /* Soft deep forest green (not near-black) */
+  --vp-bg: #0f211b;             /* main page background */
+  --vp-off-white: #12251f;      /* input fields / recessed surfaces */
+  --vp-mist: #162a23;           /* tinted panels / icon tiles */
+  --vp-line: #2b4439;           /* borders */
+  --vp-ink: #e8f0eb;            /* main text */
+  --vp-ink-soft: #b8c8be;       /* secondary text */
+  --vp-muted: #91a59a;          /* muted text */
+  --vp-surface: #182e26;        /* cards / containers (brighter than bg) */
+  --vp-footer-bg: #0b1a15;      /* deepest surface */
+  --vp-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --vp-shadow-md: 0 12px 30px rgba(0, 0, 0, 0.4);
+  --vp-shadow-lg: 0 22px 50px rgba(0, 0, 0, 0.5);
 }
 
 /* Solid header + white card surfaces → dark surface */
-:root[data-theme="dark"] .vp-header--solid { background: rgba(11, 21, 18, 0.94); }
+:root[data-theme="dark"] .vp-header--solid { background: rgba(11, 26, 21, 0.94); }
 :root[data-theme="dark"] .vp-header--solid .vp-brand__name,
 :root[data-theme="dark"] .section-title,
 :root[data-theme="dark"] h1, :root[data-theme="dark"] h2,
@@ -491,30 +493,34 @@ select:focus-visible,
    ============================================================ */
 #renewable-context.ops,
 #organizational-strength.ops {
-  background: linear-gradient(135deg, #0e2a3f 0%, #123c52 55%, #1a6a72 100%);
-  padding-top: clamp(1.8rem, 3vw, 2.6rem);
-  padding-bottom: clamp(1.8rem, 3vw, 2.6rem);
+  background: linear-gradient(135deg, #a85f26 0%, #bd7a34 55%, #cf9147 100%);
+  padding-top: clamp(1.3rem, 2.4vw, 2rem);
+  padding-bottom: clamp(1.3rem, 2.4vw, 2rem);
 }
 #renewable-context .context-figure,
 #organizational-strength .context-figure { margin: 1rem 0; padding: 1rem 1.2rem; }
 #renewable-context .context-figure__value,
-#organizational-strength .context-figure__value { font-size: clamp(1.7rem, 3.6vw, 2.3rem); }
+#organizational-strength .context-figure__value { font-size: clamp(1.7rem, 3.6vw, 2.3rem); color: #fff; }
+#renewable-context .context-figure__areas,
+#organizational-strength .context-figure__areas { color: rgba(255, 255, 255, 0.9); }
+#renewable-context .eyebrow--light,
+#organizational-strength .eyebrow--light { color: #ffe9c9; }
 
 #renewable-context .context-caps__item,
 #organizational-strength .orgstr-item {
-  background: rgba(127, 214, 207, 0.14);
-  border: 1px solid rgba(127, 214, 207, 0.4);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   transition: transform 0.22s var(--vp-ease), background 0.22s var(--vp-ease),
     border-color 0.22s var(--vp-ease), box-shadow 0.22s var(--vp-ease);
 }
 #renewable-context .context-caps__item:hover,
 #organizational-strength .orgstr-item:hover {
   transform: translateY(-3px);
-  background: rgba(230, 187, 99, 0.22);
-  border-color: var(--vp-gold-400);
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
 }
-#renewable-context .context-caps__item i { color: var(--vp-gold-400); }
+#renewable-context .context-caps__item i { color: #fff; }
 @media (prefers-reduced-motion: reduce) {
   #renewable-context .context-caps__item:hover,
   #organizational-strength .orgstr-item:hover { transform: none; }

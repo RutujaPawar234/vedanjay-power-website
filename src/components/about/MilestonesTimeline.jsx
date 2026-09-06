@@ -16,27 +16,31 @@ export default function MilestonesTimeline() {
         </div>
       </div>
 
-      <div className="htimeline reveal" role="list" aria-label="Company milestones">
+      <div className="htimeline reveal" aria-label="Company milestones">
+        {/* Track holds two copies for a seamless auto-scroll loop. */}
         <div className="htimeline__track">
           <div className="htimeline__line" aria-hidden="true">
             <span className="htimeline__flow" />
           </div>
-          {MILESTONES.map((m, i) => (
-            <div
-              className={`htimeline__item ${i % 2 ? 'htimeline__item--down' : 'htimeline__item--up'}`}
-              role="listitem"
-              key={m.title}
-            >
-              <div className="htimeline__card">
-                {m.year && <span className="htimeline__year">{m.year}</span>}
-                <h3 className="htimeline__title">{m.title}</h3>
-                <p className="htimeline__text">{m.desc}</p>
+          {[...MILESTONES, ...MILESTONES].map((m, i) => {
+            const n = (i % MILESTONES.length) + 1;
+            return (
+              <div
+                className={`htimeline__item ${i % 2 ? 'htimeline__item--down' : 'htimeline__item--up'}`}
+                aria-hidden={i >= MILESTONES.length ? 'true' : undefined}
+                key={`${m.title}-${i}`}
+              >
+                <div className="htimeline__card">
+                  {m.year && <span className="htimeline__year">{m.year}</span>}
+                  <h3 className="htimeline__title">{m.title}</h3>
+                  <p className="htimeline__text">{m.desc}</p>
+                </div>
+                <span className="htimeline__node" aria-hidden="true">
+                  <span className="htimeline__num">{n}</span>
+                </span>
               </div>
-              <span className="htimeline__node" aria-hidden="true">
-                <span className="htimeline__num">{i + 1}</span>
-              </span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

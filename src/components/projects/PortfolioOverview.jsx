@@ -17,7 +17,6 @@ export default function PortfolioOverview() {
         <ul className="portfolio-strip" aria-label="Capability areas">
           {PORTFOLIO_OVERVIEW.map((c, i) => (
             <li className="portfolio-strip__item reveal" style={{ '--d': `${i * 55}ms` }} key={c.text}>
-              <span className="portfolio-strip__icon" aria-hidden="true"><i className={`bi ${c.icon}`} /></span>
               <span className="portfolio-strip__text">{c.text}</span>
             </li>
           ))}

@@ -27,12 +27,7 @@ export default function IndustrySegment({ segment, index }) {
 
           <div className={`col-lg-7 ${flip ? 'order-lg-1' : ''} reveal-${flip ? 'left' : 'right'}`}>
             <span className="eyebrow">{segment.label}</span>
-            <h2 className="section-title mt-2 d-flex align-items-center gap-2">
-              <span className="service-detail__icon" aria-hidden="true">
-                <i className={`bi ${segment.icon}`} />
-              </span>
-              {segment.title}
-            </h2>
+            <h2 className="section-title mt-2">{segment.title}</h2>
             <div className="title-rule" />
             <p className="section-lead">{segment.desc}</p>
 
@@ -66,10 +61,10 @@ export default function IndustrySegment({ segment, index }) {
             )}
 
             <div className="svc-block">
-              <h3 className="svc-block__title"><i className="bi bi-list-check" aria-hidden="true" /> Relevant Solutions</h3>
-              <ul className="svc-grid">
+              <h3 className="svc-block__title">Relevant Solutions</h3>
+              <ul className="svc-grid svc-grid--lg">
                 {segment.services.map((s) => (
-                  <li key={s}><i className="bi bi-check2" aria-hidden="true" />{s}</li>
+                  <li key={s}>{s}</li>
                 ))}
               </ul>
             </div>

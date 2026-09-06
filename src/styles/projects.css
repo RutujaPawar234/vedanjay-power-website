@@ -11,13 +11,17 @@
 }
 .portfolio-strip__item {
   display: inline-flex; align-items: center; gap: 0.55rem;
-  background: #fff; border: 1px solid var(--vp-line);
+  background: var(--vp-surface); border: 1px solid var(--vp-line);
   border-radius: 999px; padding: 0.6rem 1.15rem;
   font-weight: 700; font-size: 0.96rem; color: var(--vp-green-700);
   box-shadow: var(--vp-shadow-sm);
-  transition: transform 0.2s var(--vp-ease), border-color 0.2s var(--vp-ease);
+  transition: transform 0.2s var(--vp-ease), border-color 0.2s var(--vp-ease),
+    background 0.2s var(--vp-ease), color 0.2s var(--vp-ease);
 }
-.portfolio-strip__item:hover { transform: translateY(-3px); border-color: var(--vp-teal-300); }
+.portfolio-strip__item:hover {
+  transform: translateY(-3px);
+  background: var(--vp-green-600); border-color: var(--vp-green-600); color: #fff;
+}
 .portfolio-strip__icon {
   width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px;
   background: var(--vp-mist); color: var(--vp-green-700); font-size: 0.95rem;
