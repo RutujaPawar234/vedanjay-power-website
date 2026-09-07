@@ -26,8 +26,8 @@ export default function LeadershipProfiles() {
                   <h3 className="lead-profile__name">{l.name}</h3>
                   <p className="lead-profile__role">{l.role}</p>
 
-                  <div className="lead-profile__links">
-                    {l.linkedinStatus === 'available' && l.linkedin ? (
+                  {l.linkedinStatus === 'available' && l.linkedin && (
+                    <div className="lead-profile__links">
                       <a
                         className="lead-profile__linkedin"
                         href={l.linkedin}
@@ -37,12 +37,8 @@ export default function LeadershipProfiles() {
                       >
                         <i className="bi bi-linkedin" aria-hidden="true" /> LinkedIn
                       </a>
-                    ) : (
-                      <span className="lead-profile__pending">
-                        <i className="bi bi-linkedin" aria-hidden="true" /> LinkedIn — {l.linkedinStatus}
-                      </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </article>
             </div>

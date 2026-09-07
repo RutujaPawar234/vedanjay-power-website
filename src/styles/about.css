@@ -309,7 +309,7 @@
   width: max-content;
   min-height: 430px;
   padding: 0 0.7rem;
-  animation: vp-htl-marquee 46s linear infinite;
+  animation: vp-htl-marquee 78s linear infinite;
 }
 .htimeline:hover .htimeline__track { animation-play-state: paused; }
 @keyframes vp-htl-marquee {

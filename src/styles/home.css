@@ -819,8 +819,10 @@
 .cta > .container { position: relative; z-index: 1; }
 .cta .eyebrow--light { color: var(--vp-green-600); }
 .cta__inner { text-align: center; max-width: 780px; margin: 0 auto; }
-.cta__title { font-size: clamp(1.35rem, 2.7vw, 1.95rem); color: var(--vp-green-800); margin: 0.3rem 0 0.5rem; line-height: 1.18; }
-.cta__text { font-size: clamp(0.98rem, 1.3vw, 1.1rem); line-height: 1.5; color: var(--vp-ink-soft); margin: 0 auto 1rem; max-width: 60ch; }
+/* Band is always whitish-green in both themes → force readable dark text
+   (extra specificity beats the dark-theme heading override). */
+.cta .cta__title { font-size: clamp(1.35rem, 2.7vw, 1.95rem); color: var(--vp-green-700); margin: 0.3rem 0 0.5rem; line-height: 1.18; }
+.cta .cta__text { font-size: clamp(0.98rem, 1.3vw, 1.1rem); line-height: 1.5; color: #46584b; margin: 0 auto 1rem; max-width: 60ch; }
 .cta__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
 
 /* ---------------------------------------------------------------
