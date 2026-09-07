@@ -18,10 +18,18 @@ function isSensitive(text) {
   return SENSITIVE.some((w) => new RegExp(`\\b${w}\\b`).test(text));
 }
 
+const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 function scoreIntent(text, intent) {
   let score = 0;
   for (const kw of intent.keywords) {
-    if (text.includes(kw)) score += kw.includes(' ') ? 2 : 1;
+    if (kw.includes(' ')) {
+      // multi-word phrases: substring match, weighted higher
+      if (text.includes(kw)) score += 2;
+    } else if (new RegExp(`\\b${escapeRegex(kw)}\\b`).test(text)) {
+      // single words: whole-word match (so "hi" doesn't match "hiring")
+      score += 1;
+    }
   }
   return score;
 }

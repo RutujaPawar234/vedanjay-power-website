@@ -15,7 +15,7 @@ export const CONTACT = {
 };
 
 export const FALLBACK =
-  `I don't have verified information about that. Please contact the Vedanjay Power team at ${CONTACT.emailGeneral} or ${CONTACT.phone}.`;
+  `I can help with our services, QCA / Forecasting & Scheduling, open access, metering & telemetry, electrical infrastructure, projects, careers, or contact details — try one of those. For anything else, reach the team at ${CONTACT.emailGeneral} or ${CONTACT.phone}.`;
 
 export const WELCOME = [
   'Hello! Welcome to Vedanjay Power.',
@@ -42,10 +42,35 @@ export const INTENTS = [
   },
   {
     id: 'about',
-    keywords: ['about', 'who are you', 'who is vedanjay', 'company', 'overview', 'established'],
+    keywords: [
+      'about', 'who are you', 'who is vedanjay', 'company', 'overview', 'established',
+      'vedanjay', 'information', 'info', 'tell me', 'details', 'know more', 'more about',
+      'what is', 'background', 'profile', 'introduction',
+    ],
     answer:
       'Vedanjay Power Pvt. Ltd., established in 2011, is a diversified power-sector solutions company supporting renewable-energy generators and eligible commercial and industrial consumers across India — spanning renewable energy, Forecasting & Scheduling, QCA, open access, metering, telemetry, transmission, electrical infrastructure, grid studies, and consultancy.',
     cta: { label: 'About Us', to: '/about' },
+  },
+  {
+    id: 'vision',
+    keywords: ['vision', 'mission', 'values', 'core values', 'goal', 'purpose', 'principles'],
+    answer:
+      'Our vision is to be a trusted, leading power-sector solutions partner in India through reliable, efficient, and sustainable energy management. Our values: integrity, reliability, technical excellence, customer focus, innovation, compliance & responsibility, and sustainability.',
+    cta: { label: 'About Us', to: '/about' },
+  },
+  {
+    id: 'technology',
+    keywords: ['ai', 'ml', 'technology', 'enercast', 'accuracy', 'forecasting technology', 'advanced'],
+    answer:
+      'Our forecasting is AI/ML-enabled, including a partnership with ENERCAST GmbH, Germany, for advanced renewable-energy forecasting — supporting accurate schedules and reduced DSM exposure.',
+    cta: { label: 'QCA / Forecasting', to: '/services#qca-forecasting-scheduling' },
+  },
+  {
+    id: 'clients',
+    keywords: ['client', 'clients', 'customer', 'customers', 'partner', 'partners', 'trusted by'],
+    answer:
+      'Vedanjay Power supports renewable-energy generators and commercial & industrial consumers. Approved client and partner names are shown on our Projects page.',
+    cta: { label: 'Projects', to: '/projects' },
   },
   {
     id: 'services',
