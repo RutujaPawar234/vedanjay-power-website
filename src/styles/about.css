@@ -383,3 +383,20 @@
 .htimeline__num { font-size: 0.85rem; font-weight: 700; }
 
 @media (prefers-reduced-motion: reduce) { .htimeline__flow { animation: none; } }
+
+/* ---------------- Awards & Recognition ---------------- */
+.award-card {
+  height: 100%;
+  background: #fff; border: 1px solid var(--vp-line);
+  border-left: 4px solid var(--vp-gold-500);
+  border-radius: var(--vp-radius); padding: 1.3rem 1.4rem;
+  transition: transform 0.3s var(--vp-ease), box-shadow 0.3s var(--vp-ease), border-color 0.3s var(--vp-ease);
+}
+.award-card:hover { transform: translateY(-5px); box-shadow: var(--vp-shadow-md); }
+.award-card__meta {
+  display: block; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.4px; text-transform: uppercase; color: var(--vp-gold-500);
+  margin-bottom: 0.4rem;
+}
+.award-card__title { font-size: 1.1rem; margin-bottom: 0.4rem; line-height: 1.3; }
+.award-card__text { font-size: 0.96rem; color: var(--vp-ink-soft); margin: 0; }
