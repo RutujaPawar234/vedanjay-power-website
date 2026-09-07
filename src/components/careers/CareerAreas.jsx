@@ -14,7 +14,6 @@ export default function CareerAreas() {
           {CAREER_AREAS.map((a, i) => (
             <div className="col-sm-6 col-lg-4 reveal" style={{ '--d': `${i * 60}ms` }} key={a.title}>
               <div className="career-area">
-                <span className="career-area__icon" aria-hidden="true"><i className={`bi ${a.icon}`} /></span>
                 <h3 className="career-area__title">{a.title}</h3>
                 <p className="career-area__text">{a.text}</p>
               </div>
