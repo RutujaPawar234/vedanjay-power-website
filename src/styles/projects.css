@@ -383,3 +383,14 @@
 @media (prefers-reduced-motion: reduce) {
   .gallery-card { transition: none; }
 }
+
+/* Compact coverflow (homepage) — smaller cards */
+.gallery-cf--compact .gallery-cf__stage { height: 340px; }
+.gallery-cf--compact .gallery-card { width: min(400px, 78vw); }
+.gallery-cf--compact .gallery-card__media { height: 210px; }
+.gallery-cf--compact .gallery-card__title { font-size: 1.1rem; }
+.gallery-cf--compact .gallery-card__text { font-size: 0.9rem; }
+@media (max-width: 640px) {
+  .gallery-cf--compact .gallery-cf__stage { height: 300px; }
+  .gallery-cf--compact .gallery-card__media { height: 160px; }
+}

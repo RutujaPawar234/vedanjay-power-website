@@ -1,67 +1,57 @@
 /* ============================================================
-   Vedanjay Power — Awards & Recognition
-   Content sourced from the company's published awards page.
+   Vedanjay Power — Awards & Recognition (with certificates)
+   Certificate images sourced from the company's awards page.
    ============================================================ */
 
 export const AWARDS = [
   {
+    img: '/images/awards/Solar_roofs2.png',
     title: 'Solar Rooftop Consulting Company of the Year',
-    issuer: 'SolarRoofs Series Excellence Awards',
-    year: '2018–19',
-    text: 'Recognised as Solar Rooftop Consulting Company of the Year.',
+    caption: 'SolarRoofs Series Excellence Awards — 2018–19',
   },
   {
+    img: '/images/awards/reassetaward.png',
     title: 'Gold Award — Technical O&M Service Provider of the Year',
-    issuer: 'RE Assets, New Delhi',
-    year: '2019',
-    text: 'Winner — Technical O&M Service Provider of the Year for Rooftop Solar Energy.',
+    caption: 'Rooftop Solar Energy · RE Assets, New Delhi — 2019',
   },
   {
+    img: '/images/awards/rising_star1.jpg',
     title: 'Gold Award — Rising Star Category',
-    issuer: 'RE Assets',
-    year: '',
-    text: 'Recognised as Technical O&M Service Provider of the Year for Rooftop Solar Energy.',
+    caption: 'Technical O&M Service Provider — Rooftop Solar Energy',
   },
   {
-    title: '25 Fastest-Growing Consultants in India',
-    issuer: 'The CEO Magazine',
-    year: '2018',
-    text: 'Featured among India’s fastest-growing consultant firms.',
-  },
-  {
-    title: '10 Most Promising Solar Energy Consultants',
-    issuer: 'Consultants Review',
-    year: '2017',
-    text: 'Listed among the most promising solar-energy consultants.',
-  },
-  {
-    title: '40 Most Promising Young Business Leaders',
-    issuer: '',
-    year: '',
-    text: 'Recognition in the solar-industry sector.',
-  },
-  {
-    title: 'Runner-Up — Solar Business Consulting Company',
-    issuer: '',
-    year: '2016',
-    text: 'Runner-up recognition as a solar business consulting company.',
-  },
-  {
+    img: '/images/awards/certificateConsutant.png',
     title: 'Certificate of Excellence',
-    issuer: '',
-    year: '',
-    text: 'Awarded a Certificate of Excellence.',
+    caption: 'Awarded a Certificate of Excellence',
   },
   {
+    img: '/images/awards/ConsultantInIndia.png',
+    title: '25 Fastest-Growing Consultants in India',
+    caption: 'The CEO Magazine — 2018',
+  },
+  {
+    img: '/images/awards/businessman.png',
+    title: "India's 40 Most Promising Young Business Leaders",
+    caption: 'Solar Industry',
+  },
+  {
+    img: '/images/awards/award-1.jpg',
+    title: '10 Most Promising Solar Energy Consultants',
+    caption: 'Consultants Review — 2017',
+  },
+  {
+    img: '/images/awards/award-2.jpg',
+    title: 'Runner-Up — Solar Business Consulting Company of the Year',
+    caption: '2016',
+  },
+  {
+    img: '/images/awards/award-3.png',
     title: '100 MW Power Generation Milestone',
-    issuer: '',
-    year: '',
-    text: 'Milestone of selling power from wind & solar across Madhya Pradesh and Maharashtra.',
+    caption: 'Power sold from wind & solar across MP and Maharashtra',
   },
   {
+    img: '/images/awards/WomenLeader1.png',
     title: 'Women Leader Recognition',
-    issuer: 'Mrs. Anjali Yadav, Director',
-    year: '',
-    text: 'Recognition of leadership by Mrs. Anjali Yadav, Director, Vedanjay Power.',
+    caption: 'Mrs. Anjali Yadav, Director, Vedanjay Power Pvt. Ltd.',
   },
 ];

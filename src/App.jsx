@@ -31,11 +31,25 @@ function PagePlaceholder({ title }) {
   );
 }
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
-  }, [pathname]);
+    if (hash) {
+      // Wait for the target section to render, then scroll to it.
+      let tries = 0;
+      const tryScroll = () => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (tries++ < 12) {
+          setTimeout(tryScroll, 80);
+        }
+      };
+      setTimeout(tryScroll, 60);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, [pathname, hash]);
   return null;
 }
 
@@ -43,7 +57,7 @@ export default function App() {
   return (
     <>
       <a href="#main-content" className="skip-link">Skip to content</a>
-      <ScrollToTop />
+      <ScrollManager />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

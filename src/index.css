@@ -547,3 +547,6 @@ select:focus-visible,
   #renewable-context .context-caps__item:hover,
   #organizational-strength .orgstr-item:hover { transform: none; }
 }
+
+/* Offset anchored sections below the fixed header */
+.section[id], section[id] { scroll-margin-top: 84px; }

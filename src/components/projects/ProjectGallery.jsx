@@ -6,21 +6,20 @@ import { useState } from 'react';
  * Uses the site's existing themed images for reliable loading.
  */
 const GALLERY = [
-  { img: '/images/hero/solar-sunrise.jpg', title: 'Solar', text: 'Forecasting & QCA services for solar power plants.', alt: 'Solar power plant' },
-  { img: '/images/hero/wind-hybrid.jpg', title: 'Wind', text: 'QCA and forecasting services for wind power plants.', alt: 'Wind turbines at sunset' },
-  { img: '/images/renewable/hybrid.jpg', title: 'Hybrid', text: 'Support for combined solar–wind hybrid projects.', alt: 'Hybrid renewable-energy site' },
-  { img: '/images/hero/transmission.jpg', title: 'Transmission', text: 'Transmission and grid-connectivity works.', alt: 'Electrical transmission lines' },
-  { img: '/images/services/metering.jpg', title: 'Metering & Telemetry', text: 'ABT metering and telemetry systems.', alt: 'Metering and telemetry equipment' },
-  { img: '/images/hero/control-room.jpg', title: 'Operations', text: '24×7 monitoring and operational support.', alt: 'Operations monitoring' },
+  { img: '/images/gallery/solar.jpg', title: 'Solar', text: 'Forecasting & QCA services for solar power plants.', alt: 'Solar panels in a field' },
+  { img: '/images/gallery/windfarm.jpg', title: 'Solar Farms', text: 'Utility-scale solar generation support.', alt: 'Aerial view of a solar farm' },
+  { img: '/images/gallery/wind.jpg', title: 'Wind', text: 'QCA and forecasting services for wind power plants.', alt: 'Wind turbines at sunset' },
+  { img: '/images/gallery/powerlines.jpg', title: 'Transmission', text: 'Transmission and grid-connectivity works.', alt: 'Electrical transmission lines at sunset' },
+  { img: '/images/gallery/solarfarm.jpg', title: 'Rooftop Solar', text: 'Rooftop and distributed solar support.', alt: 'Rooftop solar installation at sunset' },
 ];
 
-export default function ProjectGallery() {
+export default function ProjectGallery({ compact = false }) {
   const [active, setActive] = useState(0);
   const n = GALLERY.length;
   const go = (d) => setActive((a) => (a + d + n) % n);
 
   return (
-    <section className="section" id="gallery">
+    <section className={`section ${compact ? 'section--mist' : ''}`} id={compact ? 'home-gallery' : 'gallery'}>
       <div className="container">
         <div className="text-center reveal">
           <span className="eyebrow">Gallery</span>
@@ -31,7 +30,7 @@ export default function ProjectGallery() {
           </p>
         </div>
 
-        <div className="gallery-cf" role="group" aria-roledescription="carousel" aria-label="Project imagery">
+        <div className={`gallery-cf ${compact ? 'gallery-cf--compact' : ''}`} role="group" aria-roledescription="carousel" aria-label="Project imagery">
           <div className="gallery-cf__stage">
             {GALLERY.map((g, i) => {
               let offset = i - active;

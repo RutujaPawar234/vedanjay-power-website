@@ -1,8 +1,8 @@
 import { AWARDS } from '../../data/awardsData.js';
 
 /**
- * Awards & Recognition — company-published awards. Documents/certificates
- * can be added later as downloadable files under /public/docs.
+ * Awards & Recognition — certificate images published by the company.
+ * Click a card to open the full certificate.
  */
 export default function AwardsRecognition() {
   return (
@@ -13,22 +13,29 @@ export default function AwardsRecognition() {
           <h2 className="section-title mt-2">Recognised across the solar &amp; power sector</h2>
           <div className="title-rule title-rule--center" />
           <p className="section-lead mx-auto text-center">
-            Industry awards and recognitions received by Vedanjay Power Pvt. Ltd.
+            Industry awards and certificates received by Vedanjay Power Pvt. Ltd.
           </p>
         </div>
 
         <div className="row g-4 mt-2">
           {AWARDS.map((a, i) => (
-            <div className="col-md-6 col-lg-4 reveal" style={{ '--d': `${i * 45}ms` }} key={a.title}>
-              <article className="award-card">
-                {(a.year || a.issuer) && (
-                  <span className="award-card__meta">
-                    {a.issuer}{a.issuer && a.year ? ' · ' : ''}{a.year}
-                  </span>
-                )}
-                <h3 className="award-card__title">{a.title}</h3>
-                <p className="award-card__text">{a.text}</p>
-              </article>
+            <div className="col-sm-6 col-lg-4 reveal" style={{ '--d': `${i * 40}ms` }} key={a.title}>
+              <a
+                className="award-cert"
+                href={a.img}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View certificate: ${a.title}`}
+              >
+                <div className="award-cert__media">
+                  <img src={a.img} alt={a.title} loading="lazy" />
+                  <span className="award-cert__view"><i className="bi bi-arrows-fullscreen" aria-hidden="true" /> View</span>
+                </div>
+                <div className="award-cert__body">
+                  <h3 className="award-cert__title">{a.title}</h3>
+                  <p className="award-cert__caption">{a.caption}</p>
+                </div>
+              </a>
             </div>
           ))}
         </div>

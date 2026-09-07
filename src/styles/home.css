@@ -1228,3 +1228,42 @@
 /* Leadership preview real photos */
 .leader-card__photo--img { padding: 0; overflow: hidden; }
 .leader-card__img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+/* ---------------------------------------------------------------
+   NAV DROPDOWNS
+--------------------------------------------------------------- */
+.vp-nav__item--drop { position: relative; }
+.vp-nav__link--parent { display: inline-flex; align-items: center; gap: 0.3rem; }
+.vp-nav__caret { font-size: 0.68rem; transition: transform 0.25s var(--vp-ease); }
+.vp-nav__item--drop:hover .vp-nav__caret,
+.vp-nav__item--drop:focus-within .vp-nav__caret { transform: rotate(180deg); }
+.vp-dropdown {
+  position: absolute; top: 100%; left: 0; min-width: 224px;
+  background: var(--vp-surface); border: 1px solid var(--vp-line);
+  border-radius: 12px; box-shadow: var(--vp-shadow-md);
+  padding: 0.5rem; display: flex; flex-direction: column; gap: 0.05rem;
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity 0.22s var(--vp-ease), transform 0.22s var(--vp-ease), visibility 0.22s;
+  z-index: 40;
+}
+.vp-nav__item--drop:hover .vp-dropdown,
+.vp-nav__item--drop:focus-within .vp-dropdown {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.vp-dropdown__link {
+  padding: 0.6rem 0.8rem; border-radius: 8px;
+  font-weight: 700; font-size: 0.95rem; color: var(--vp-ink-soft);
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.2s var(--vp-ease), color 0.2s var(--vp-ease);
+}
+.vp-dropdown__link:hover { background: var(--vp-mist); color: var(--vp-green-700); }
+
+/* Mobile sub-menu */
+.vp-nav-mobile__group { display: flex; flex-direction: column; }
+.vp-nav-mobile__sub { display: flex; flex-direction: column; padding: 0.1rem 0 0.5rem 0.9rem; }
+.vp-nav-mobile__sublink {
+  padding: 0.55rem 0.4rem; font-size: 0.98rem; font-weight: 600;
+  color: var(--vp-ink-soft); text-decoration: none;
+  border-bottom: 1px solid var(--vp-line);
+}
+.vp-nav-mobile__sublink:last-child { border-bottom: none; }

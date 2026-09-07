@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { NAV_LINKS } from '../data/homeData.js';
 import BrandLogo from './BrandLogo.jsx';
 import ThemeToggle from './ThemeToggle.jsx';
@@ -45,14 +45,34 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="vp-nav d-none d-xl-flex" aria-label="Primary">
           {NAV_LINKS.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.to === '/'}
-              className={({ isActive }) => `vp-nav__link ${isActive ? 'is-active' : ''}`}
-            >
-              {l.label}
-            </NavLink>
+            l.children ? (
+              <div className="vp-nav__item vp-nav__item--drop" key={l.label}>
+                <NavLink
+                  to={l.to}
+                  end={l.to === '/'}
+                  className={({ isActive }) => `vp-nav__link vp-nav__link--parent ${isActive ? 'is-active' : ''}`}
+                >
+                  {l.label}
+                  <i className="bi bi-chevron-down vp-nav__caret" aria-hidden="true" />
+                </NavLink>
+                <div className="vp-dropdown" role="menu">
+                  {l.children.map((c) => (
+                    <Link key={c.label} to={c.to} className="vp-dropdown__link" role="menuitem">
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                end={l.to === '/'}
+                className={({ isActive }) => `vp-nav__link ${isActive ? 'is-active' : ''}`}
+              >
+                {l.label}
+              </NavLink>
+            )
           ))}
         </nav>
 
@@ -99,16 +119,31 @@ export default function Header() {
         </div>
         <nav className="vp-nav-mobile" aria-label="Mobile primary">
           {NAV_LINKS.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.to === '/'}
-              onClick={() => setMenuOpen(false)}
-              className={({ isActive }) => `vp-nav-mobile__link ${isActive ? 'is-active' : ''}`}
-            >
-              {l.label}
-              <i className="bi bi-chevron-right" aria-hidden="true" />
-            </NavLink>
+            <div className="vp-nav-mobile__group" key={l.label}>
+              <NavLink
+                to={l.to}
+                end={l.to === '/'}
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => `vp-nav-mobile__link ${isActive ? 'is-active' : ''}`}
+              >
+                {l.label}
+                <i className="bi bi-chevron-right" aria-hidden="true" />
+              </NavLink>
+              {l.children && (
+                <div className="vp-nav-mobile__sub">
+                  {l.children.map((c) => (
+                    <Link
+                      key={c.label}
+                      to={c.to}
+                      onClick={() => setMenuOpen(false)}
+                      className="vp-nav-mobile__sublink"
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
       </aside>
