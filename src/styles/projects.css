@@ -320,3 +320,5 @@
   .client-marquee__track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
   .client-marquee { -webkit-mask-image: none; mask-image: none; }
 }
+
+.pf-list-title { margin: 1.6rem 0 0.6rem; font-size: 1.15rem; color: var(--vp-heading); scroll-margin-top: 80px; }

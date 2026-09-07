@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import useCountUp from '../../hooks/useCountUp.js';
 import IndiaPortfolioMap from './IndiaPortfolioMap.jsx';
 import {
@@ -11,11 +11,23 @@ import {
 export default function RenewablePortfolio() {
   const [active, setActive] = useState('all');
   const [countDisplay, countRef] = useCountUp(5509.18, { duration: 1600, decimals: 0 });
+  const tableRef = useRef(null);
 
   const projects = useMemo(
     () => (active === 'all' ? PORTFOLIO_PROJECTS : PORTFOLIO_PROJECTS.filter((p) => p.state === active)),
     [active]
   );
+
+  // On mobile the project list sits below the state filters — bring it into
+  // view when a specific state is selected so the projects are visible.
+  const handleSelect = (state) => {
+    setActive(state);
+    if (typeof window !== 'undefined' && window.innerWidth < 768 && state !== 'all') {
+      requestAnimationFrame(() => {
+        tableRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  };
 
   return (
     <section className="section section--mist" id="renewable-portfolio">
@@ -49,11 +61,11 @@ export default function RenewablePortfolio() {
         {/* Interactive India map — shaded by managed capacity, click to filter */}
         <div className="row g-4 align-items-center mt-2">
           <div className="col-lg-6">
-            <IndiaPortfolioMap active={active} onSelect={setActive} />
+            <IndiaPortfolioMap active={active} onSelect={handleSelect} />
           </div>
           <div className="col-lg-6">
             <div className="pf-states pf-states--stacked" role="group" aria-label="Filter portfolio by state">
-              <button type="button" className={`pf-state ${active === 'all' ? 'is-active' : ''}`} onClick={() => setActive('all')}>
+              <button type="button" className={`pf-state ${active === 'all' ? 'is-active' : ''}`} onClick={() => handleSelect('all')}>
                 <span className="pf-state__name">All States</span>
                 <span className="pf-state__meta">{PORTFOLIO_COUNT} · {PORTFOLIO_TOTAL_MW} MW</span>
               </button>
@@ -62,7 +74,7 @@ export default function RenewablePortfolio() {
                   key={s.state}
                   type="button"
                   className={`pf-state ${active === s.state ? 'is-active' : ''}`}
-                  onClick={() => setActive(s.state)}
+                  onClick={() => handleSelect(s.state)}
                   aria-pressed={active === s.state}
                 >
                   <span className="pf-state__name">{s.state}</span>
@@ -74,6 +86,9 @@ export default function RenewablePortfolio() {
         </div>
 
         {/* Project list */}
+        <h3 className="pf-list-title" ref={tableRef}>
+          {active === 'all' ? `All projects (${projects.length})` : `${active} — ${projects.length} project${projects.length === 1 ? '' : 's'}`}
+        </h3>
         <div className="pf-table-wrap reveal">
           <table className="pf-table">
             <caption className="visually-hidden">
