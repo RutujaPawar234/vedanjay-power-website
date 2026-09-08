@@ -6,18 +6,9 @@ import { AWARDS } from '../../data/awardsData.js';
  */
 export default function AwardsRecognition() {
   return (
-    <section className="section section--mist" id="awards">
+    <section className="section" id="awards">
       <div className="container">
-        <div className="text-center reveal">
-          <span className="eyebrow">Awards &amp; Recognition</span>
-          <h2 className="section-title mt-2">Recognised across the solar &amp; power sector</h2>
-          <div className="title-rule title-rule--center" />
-          <p className="section-lead mx-auto text-center">
-            Industry awards and certificates received by Vedanjay Power Pvt. Ltd.
-          </p>
-        </div>
-
-        <div className="row g-4 mt-2">
+        <div className="row g-4">
           {AWARDS.map((a, i) => (
             <div className="col-6 col-lg-3 reveal" style={{ '--d': `${i * 35}ms` }} key={a.title}>
               <a

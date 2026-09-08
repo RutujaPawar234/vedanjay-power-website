@@ -278,8 +278,8 @@ export const NAV_LINKS = [
     to: '/about',
     label: 'About Us',
     children: [
-      { to: '/about#awards', label: 'Awards' },
-      { to: '/about#downloads', label: 'Downloads' },
+      { to: '/awards', label: 'Awards' },
+      { to: '/downloads', label: 'Downloads' },
     ],
   },
   { to: '/services', label: 'Services' },

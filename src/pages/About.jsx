@@ -10,8 +10,6 @@ import VisionSection from '../components/about/VisionSection.jsx';
 import MissionSection from '../components/about/MissionSection.jsx';
 import CoreValues from '../components/about/CoreValues.jsx';
 import Achievements from '../components/about/Achievements.jsx';
-import AwardsRecognition from '../components/about/AwardsRecognition.jsx';
-import DownloadsSection from '../components/about/DownloadsSection.jsx';
 import AreasOfOperation from '../components/AreasOfOperation.jsx';
 import AboutCTA from '../components/about/AboutCTA.jsx';
 
@@ -50,8 +48,6 @@ export default function About() {
       <MissionSection />
       <CoreValues />
       <Achievements />
-      <AwardsRecognition />
-      <DownloadsSection />
       <AreasOfOperation />
       <AboutCTA />
     </main>

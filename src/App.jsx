@@ -6,6 +6,8 @@ import Footer from './components/Footer.jsx';
 import Chatbot from './components/chatbot/Chatbot.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
+import Awards from './pages/Awards.jsx';
+import Downloads from './pages/Downloads.jsx';
 import Services from './pages/Services.jsx';
 import Industries from './pages/Industries.jsx';
 import Projects from './pages/Projects.jsx';
@@ -62,6 +64,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/awards" element={<Awards />} />
+        <Route path="/downloads" element={<Downloads />} />
         <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/projects" element={<Projects />} />

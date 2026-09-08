@@ -6,17 +6,8 @@ import { DOWNLOAD_GROUPS } from '../../data/downloadsData.js';
  */
 export default function DownloadsSection() {
   return (
-    <section className="section section--mist" id="downloads">
+    <section className="section" id="downloads">
       <div className="container">
-        <div className="text-center reveal">
-          <span className="eyebrow">Downloads</span>
-          <h2 className="section-title mt-2">Documents &amp; regulations</h2>
-          <div className="title-rule title-rule--center" />
-          <p className="section-lead mx-auto text-center">
-            Open-access, rooftop-solar, and forecasting &amp; scheduling references, plus the company profile.
-          </p>
-        </div>
-
         <div className="downloads-groups reveal">
           {DOWNLOAD_GROUPS.map((g) => (
             <div className="downloads-group" key={g.title}>
