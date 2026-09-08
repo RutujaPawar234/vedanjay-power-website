@@ -19,7 +19,7 @@ export default function AwardsRecognition() {
 
         <div className="row g-4 mt-2">
           {AWARDS.map((a, i) => (
-            <div className="col-sm-6 col-lg-4 reveal" style={{ '--d': `${i * 40}ms` }} key={a.title}>
+            <div className="col-6 col-lg-3 reveal" style={{ '--d': `${i * 35}ms` }} key={a.title}>
               <a
                 className="award-cert"
                 href={a.img}

@@ -278,10 +278,7 @@ export const NAV_LINKS = [
     to: '/about',
     label: 'About Us',
     children: [
-      { to: '/about', label: 'Company Overview' },
-      { to: '/leadership', label: 'Meet Our Team' },
       { to: '/about#awards', label: 'Awards' },
-      { to: '/#partners', label: 'Partners' },
       { to: '/about#downloads', label: 'Downloads' },
     ],
   },
@@ -291,10 +288,10 @@ export const NAV_LINKS = [
     to: '/projects',
     label: 'Projects',
     children: [
-      { to: '/projects', label: 'Project Register' },
       { to: '/projects#gallery', label: 'Image Gallery' },
     ],
   },
+  { to: '/leadership', label: 'Leadership' },
   { to: '/careers', label: 'Careers' },
   { to: '/contact', label: 'Contact' },
 ];
