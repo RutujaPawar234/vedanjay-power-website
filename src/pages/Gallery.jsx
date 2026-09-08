@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import useReveal from '../hooks/useReveal.js';
 import SEO from '../components/SEO.jsx';
+import HeroScene from '../components/HeroScene.jsx';
 import ProjectImageGallery from '../components/projects/ProjectImageGallery.jsx';
 
 import '../styles/about.css';
@@ -18,7 +19,12 @@ export default function Gallery() {
         description="Renewable-energy and power-sector imagery — solar, wind, and grid-infrastructure visuals from Vedanjay Power."
         canonical="https://vedanjay-power.com/gallery"
       />
-      <section className="about-hero about-hero--plain" aria-label="Image Gallery">
+      <section className="about-hero" aria-label="Image Gallery">
+        <div className="about-hero__bg" aria-hidden="true">
+          <HeroScene theme="wind" />
+          <img className="about-hero__img" src="/images/gallery/windfarm.jpg" alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+          <span className="about-hero__overlay" />
+        </div>
         <div className="container about-hero__content">
           <nav className="breadcrumb-vp" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
