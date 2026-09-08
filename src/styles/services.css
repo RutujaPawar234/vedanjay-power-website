@@ -202,7 +202,8 @@
 .industry-card__list li i { color: var(--vp-green-600); }
 
 /* ---------------- Enquiry CTA ---------------- */
-.cta--enquiry .cta__title { color: #fff; }
+.cta--enquiry .cta__title { color: var(--vp-green-700); }
+:root[data-theme="dark"] .cta--enquiry .cta__title { color: var(--vp-green-700); }
 .cta__text.ms-0 { margin-left: 0; }
 
 .enquiry {

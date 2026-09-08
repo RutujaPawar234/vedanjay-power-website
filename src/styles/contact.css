@@ -130,3 +130,7 @@ a.contact-row:hover { background: var(--vp-off-white); color: var(--vp-ink); }
 @media (max-width: 575.98px) {
   .about-hero--short { min-height: 40vh; }
 }
+
+/* Office card embedded map */
+.office-card__map { margin-top: 1rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--vp-line); }
+.office-card__mapframe { display: block; width: 100%; height: 220px; border: 0; }

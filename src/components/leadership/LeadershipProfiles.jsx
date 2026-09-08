@@ -20,11 +20,11 @@ export default function LeadershipProfiles() {
                   ) : (
                     <span className="lead-profile__initials" aria-hidden="true">{l.initials}</span>
                   )}
+                  <span className="lead-profile__role-badge">{l.role}</span>
                 </div>
 
                 <div className="lead-profile__body">
                   <h3 className="lead-profile__name">{l.name}</h3>
-                  <p className="lead-profile__role">{l.role}</p>
 
                   {(l.linkedin || l.email) && (
                     <div className="lead-profile__links">

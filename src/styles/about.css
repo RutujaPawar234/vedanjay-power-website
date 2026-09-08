@@ -446,9 +446,19 @@
   font-weight: 700; font-size: 0.9rem; color: var(--vp-green-700); white-space: nowrap;
 }
 
-/* Downloads groups */
-.downloads-groups { max-width: 900px; margin: 2rem auto 0; display: grid; gap: 1.6rem; }
-.downloads-group__title { font-size: 1.12rem; color: var(--vp-green-800); margin: 0 0 0.7rem; }
+/* Downloads groups — heading on the left, documents on the right */
+.downloads-groups { max-width: 1040px; margin: 2rem auto 0; display: grid; gap: 1.4rem; }
+.downloads-group {
+  display: grid; grid-template-columns: 240px 1fr; gap: 0.8rem 2rem;
+  align-items: start;
+  padding-bottom: 1.4rem; border-bottom: 1px solid var(--vp-line);
+}
+.downloads-group:last-child { border-bottom: none; padding-bottom: 0; }
+.downloads-group__title { font-size: 1.1rem; color: var(--vp-green-800); margin: 0; position: sticky; top: 90px; }
+@media (max-width: 767.98px) {
+  .downloads-group { grid-template-columns: 1fr; gap: 0.7rem; }
+  .downloads-group__title { position: static; }
+}
 
 /* Smaller heading on plain (Awards/Downloads/Services) heroes */
 .about-hero--plain .about-hero__title { font-size: clamp(1.5rem, 2.7vw, 2.1rem); }

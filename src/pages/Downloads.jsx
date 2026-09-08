@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import useReveal from '../hooks/useReveal.js';
 import SEO from '../components/SEO.jsx';
+import HeroScene from '../components/HeroScene.jsx';
 import DownloadsSection from '../components/about/DownloadsSection.jsx';
 
 import '../styles/about.css';
@@ -17,7 +18,12 @@ export default function Downloads() {
         description="Open-access, rooftop-solar, and Forecasting & Scheduling regulatory documents and the Vedanjay Power company profile."
         canonical="https://vedanjay-power.com/downloads"
       />
-      <section className="about-hero about-hero--plain" aria-label="Downloads">
+      <section className="about-hero" aria-label="Downloads">
+        <div className="about-hero__bg" aria-hidden="true">
+          <HeroScene theme="grid" />
+          <img className="about-hero__img" src="/images/gallery/powerlines.jpg" alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+          <span className="about-hero__overlay" />
+        </div>
         <div className="container about-hero__content">
           <nav className="breadcrumb-vp" aria-label="Breadcrumb">
             <Link to="/">Home</Link>

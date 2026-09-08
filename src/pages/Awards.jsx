@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import useReveal from '../hooks/useReveal.js';
 import SEO from '../components/SEO.jsx';
+import HeroScene from '../components/HeroScene.jsx';
 import AwardsRecognition from '../components/about/AwardsRecognition.jsx';
 
 import '../styles/about.css';
@@ -17,7 +18,12 @@ export default function Awards() {
         description="Industry awards and certificates received by Vedanjay Power Pvt. Ltd. across the solar and power sector."
         canonical="https://vedanjay-power.com/awards"
       />
-      <section className="about-hero about-hero--plain" aria-label="Awards">
+      <section className="about-hero" aria-label="Awards">
+        <div className="about-hero__bg" aria-hidden="true">
+          <HeroScene theme="solar" />
+          <img className="about-hero__img" src="/images/gallery/solar.jpg" alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+          <span className="about-hero__overlay" />
+        </div>
         <div className="container about-hero__content">
           <nav className="breadcrumb-vp" aria-label="Breadcrumb">
             <Link to="/">Home</Link>

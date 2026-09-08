@@ -2,6 +2,9 @@ import { COMPANY } from '../../data/homeData.js';
 
 const wa = `https://wa.me/91${COMPANY.whatsapp}`;
 
+const embedUrl = (lines) =>
+  `https://maps.google.com/maps?q=${encodeURIComponent('Vedanjay Power Pvt. Ltd., ' + lines.join(', '))}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+
 export default function ContactInfo() {
   return (
     <section className="section" id="contact-info">
@@ -21,6 +24,16 @@ export default function ContactInfo() {
               <address className="office-card__address">
                 {COMPANY.offices.corporate.lines.map((l) => <span key={l}>{l}</span>)}
               </address>
+              <div className="office-card__map">
+                <iframe
+                  className="office-card__mapframe"
+                  src={embedUrl(COMPANY.offices.corporate.lines)}
+                  title="Map of Vedanjay Power Corporate Office, Indore"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
             </article>
           </div>
           {/* Pune branch */}
@@ -31,6 +44,16 @@ export default function ContactInfo() {
               <address className="office-card__address">
                 {COMPANY.offices.branch.lines.map((l) => <span key={l}>{l}</span>)}
               </address>
+              <div className="office-card__map">
+                <iframe
+                  className="office-card__mapframe"
+                  src={embedUrl(COMPANY.offices.branch.lines)}
+                  title="Map of Vedanjay Power Pune Branch"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
             </article>
           </div>
         </div>
