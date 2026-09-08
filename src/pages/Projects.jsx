@@ -9,7 +9,6 @@ import ExecutionCapabilities from '../components/projects/ExecutionCapabilities.
 import RenewablePortfolioContext from '../components/projects/RenewablePortfolioContext.jsx';
 import RenewablePortfolio from '../components/projects/RenewablePortfolio.jsx';
 import ProjectCategories from '../components/projects/ProjectCategories.jsx';
-import ProjectGallery from '../components/projects/ProjectGallery.jsx';
 import ProjectCaseStudyCard from '../components/projects/ProjectCaseStudyCard.jsx';
 import ProjectCTA from '../components/projects/ProjectCTA.jsx';
 
@@ -42,7 +41,6 @@ export default function Projects() {
       <TechnicalCapabilities />
       <ExecutionCapabilities />
       <RenewablePortfolio />
-      <ProjectGallery />
       <ProjectCategories />
       <RenewablePortfolioContext />
 

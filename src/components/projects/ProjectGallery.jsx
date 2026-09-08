@@ -19,17 +19,8 @@ export default function ProjectGallery() {
   const go = (d) => setActive((a) => (a + d + n) % n);
 
   return (
-    <section className="section" id="site-imagery">
+    <section className="section section--mist" id="site-imagery" aria-label="Renewable and power-sector imagery">
       <div className="container">
-        <div className="text-center reveal">
-          <span className="eyebrow">Imagery</span>
-          <h2 className="section-title mt-2">Renewable &amp; power-sector imagery</h2>
-          <div className="title-rule title-rule--center" />
-          <p className="section-lead mx-auto text-center">
-            Illustrative visuals of the renewable-energy and power-sector areas we support.
-          </p>
-        </div>
-
         <div className="gallery-cf gallery-cf--compact" role="group" aria-roledescription="carousel" aria-label="Renewable and power-sector imagery">
           <div className="gallery-cf__stage">
             {GALLERY.map((g, i) => {

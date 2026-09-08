@@ -823,6 +823,11 @@
    (extra specificity beats the dark-theme heading override). */
 .cta .cta__title { font-size: clamp(1.35rem, 2.7vw, 1.95rem); color: var(--vp-green-700); margin: 0.3rem 0 0.5rem; line-height: 1.18; }
 .cta .cta__text { font-size: clamp(0.98rem, 1.3vw, 1.1rem); line-height: 1.5; color: #46584b; margin: 0 auto 1rem; max-width: 60ch; }
+/* Dark theme forces headings light; the CTA band stays whitish, so keep
+   its text dark/green (higher specificity than the global dark heading rule). */
+:root[data-theme="dark"] .cta .cta__title { color: var(--vp-green-700); }
+:root[data-theme="dark"] .cta .cta__text { color: #46584b; }
+:root[data-theme="dark"] .cta .eyebrow--light { color: var(--vp-green-600); }
 .cta__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
 
 /* ---------------------------------------------------------------
