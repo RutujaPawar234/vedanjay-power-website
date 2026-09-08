@@ -80,3 +80,18 @@
   }
   .partner-grid .partner-card { width: auto; }
 }
+
+/* Manual horizontal scroll strip (replaces the auto-marquee) */
+.partner-scroll {
+  display: flex; gap: 1rem;
+  overflow-x: auto; overflow-y: hidden;
+  padding: 0.5rem 0.25rem 1.1rem;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.partner-scroll .partner-card { scroll-snap-align: center; }
+.partner-scroll::-webkit-scrollbar { height: 8px; }
+.partner-scroll::-webkit-scrollbar-track { background: transparent; }
+.partner-scroll::-webkit-scrollbar-thumb { background: var(--vp-line); border-radius: 999px; }
+.partner-scroll::-webkit-scrollbar-thumb:hover { background: var(--vp-green-500); }
+.partner-scroll:focus-visible { outline: 2px solid var(--vp-teal-500); outline-offset: 3px; border-radius: 12px; }

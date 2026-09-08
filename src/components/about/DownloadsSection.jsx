@@ -16,6 +16,7 @@ export default function DownloadsSection() {
                 {g.items.map((d) => (
                   <li key={d.url}>
                     <div className="download-row">
+                      <span className="download-row__file" aria-hidden="true"><i className="bi bi-file-earmark-pdf" /></span>
                       <span className="download-row__name">{d.name}</span>
                       <span className="download-row__acts">
                         <a className="download-row__act" href={d.url} target="_blank" rel="noopener noreferrer" aria-label={`View ${d.name}`}>

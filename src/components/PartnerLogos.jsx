@@ -2,10 +2,8 @@ import { PARTNERS } from '../data/partnersData.js';
 import '../styles/partners.css';
 
 /**
- * "Our Partners" — premium continuous logo marquee on the homepage.
- * Uses ONLY the 22 company-approved logo assets in /public/images/partners.
- * Right-to-left seamless loop (list duplicated), pauses on hover.
- * Reduced-motion users get a static responsive grid instead (CSS-driven).
+ * "Our Partners" — the 22 company-approved logos in a horizontally
+ * scrollable strip (manual scroll / swipe; no auto-motion).
  */
 function PartnerCard({ partner }) {
   return (
@@ -23,9 +21,6 @@ function PartnerCard({ partner }) {
 }
 
 export default function PartnerLogos() {
-  // Duplicate the full list so the marquee loops with no visible jump.
-  const loop = [...PARTNERS, ...PARTNERS];
-
   return (
     <section className="section section--mist" id="partners">
       <div className="container">
@@ -36,23 +31,12 @@ export default function PartnerLogos() {
         </div>
       </div>
 
-      {/* Continuous marquee (motion). Falls back to a static grid under
-          prefers-reduced-motion via CSS. */}
-      <div className="partner-marquee reveal" aria-hidden="true">
-        <div className="partner-marquee__track">
-          {loop.map((p, i) => <PartnerCard key={`${p.file}-${i}`} partner={p} />)}
+      {/* Manually scrollable logo strip (swipe / drag / scroll). */}
+      <div className="container">
+        <div className="partner-scroll reveal" role="group" aria-label="Partner logos — scroll to view all" tabIndex={0}>
+          {PARTNERS.map((p) => <PartnerCard key={p.file} partner={p} />)}
         </div>
       </div>
-
-      {/* Static grid shown only when motion is reduced (CSS toggles it). */}
-      <div className="container partner-grid" aria-hidden="true">
-        {PARTNERS.map((p) => <PartnerCard key={p.file} partner={p} />)}
-      </div>
-
-      {/* Accessible list of all partners (visually hidden, SR/SEO). */}
-      <ul className="visually-hidden">
-        {PARTNERS.map((p) => <li key={p.file}>{p.name}</li>)}
-      </ul>
     </section>
   );
 }
