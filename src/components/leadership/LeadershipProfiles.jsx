@@ -26,17 +26,28 @@ export default function LeadershipProfiles() {
                   <h3 className="lead-profile__name">{l.name}</h3>
                   <p className="lead-profile__role">{l.role}</p>
 
-                  {l.linkedinStatus === 'available' && l.linkedin && (
+                  {(l.linkedin || l.email) && (
                     <div className="lead-profile__links">
-                      <a
-                        className="lead-profile__linkedin"
-                        href={l.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${l.name} on LinkedIn`}
-                      >
-                        <i className="bi bi-linkedin" aria-hidden="true" /> LinkedIn
-                      </a>
+                      {l.linkedin && (
+                        <a
+                          className="lead-profile__linkedin"
+                          href={l.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${l.name} on LinkedIn`}
+                        >
+                          <i className="bi bi-linkedin" aria-hidden="true" /> LinkedIn
+                        </a>
+                      )}
+                      {l.email && (
+                        <a
+                          className="lead-profile__email"
+                          href={`mailto:${l.email}`}
+                          aria-label={`Email ${l.name}`}
+                        >
+                          <i className="bi bi-envelope-fill" aria-hidden="true" /> Email
+                        </a>
+                      )}
                     </div>
                   )}
                 </div>

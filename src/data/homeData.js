@@ -253,21 +253,21 @@ export const LEADERS = [
     role: 'Founder',
     initials: 'GY',
     photo: '/images/leadership/gajanan-yadav.jpg',
-    linkedin: 'https://www.linkedin.com/in/gajanan-yadav-645367154',
+    linkedin: 'https://www.linkedin.com/in/gajanan-yadav-645367154/',
   },
   {
     name: 'Mrs. Anjali Yadav',
     role: 'Co-Founder',
     initials: 'AY',
     photo: '/images/leadership/anjali-yadav.jpg',
-    linkedin: null,
+    linkedin: 'https://www.linkedin.com/in/anjali-yadav-7b692a350/',
   },
   {
     name: 'Ms. Ankita Yadav',
     role: 'Chief Executive Officer (CEO)',
     initials: 'AY',
     photo: '/images/leadership/ankita-yadav.jpg',
-    linkedin: null,
+    linkedin: 'https://www.linkedin.com/in/ankita-yadav-b06989230/',
   },
 ];
 
