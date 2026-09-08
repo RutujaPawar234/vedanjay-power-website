@@ -11,6 +11,7 @@ import Downloads from './pages/Downloads.jsx';
 import Services from './pages/Services.jsx';
 import Industries from './pages/Industries.jsx';
 import Projects from './pages/Projects.jsx';
+import Gallery from './pages/Gallery.jsx';
 import Leadership from './pages/Leadership.jsx';
 import Careers from './pages/Careers.jsx';
 import Contact from './pages/Contact.jsx';
@@ -69,6 +70,7 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/leadership" element={<Leadership />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />

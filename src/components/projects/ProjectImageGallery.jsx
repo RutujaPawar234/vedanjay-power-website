@@ -27,17 +27,8 @@ export default function ProjectImageGallery() {
   }, [open]);
 
   return (
-    <section className="section section--mist" id="gallery">
+    <section className="section" id="gallery">
       <div className="container">
-        <div className="text-center reveal">
-          <span className="eyebrow">Image Gallery</span>
-          <h2 className="section-title mt-2">Site photography</h2>
-          <div className="title-rule title-rule--center" />
-          <p className="section-lead mx-auto text-center">
-            A look at renewable-energy and power-sector sites. Click any image to enlarge.
-          </p>
-        </div>
-
         <div className="img-gallery reveal">
           {IMAGES.map((im, i) => (
             <button

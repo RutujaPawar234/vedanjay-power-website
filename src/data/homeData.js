@@ -288,7 +288,7 @@ export const NAV_LINKS = [
     to: '/projects',
     label: 'Projects',
     children: [
-      { to: '/projects#gallery', label: 'Image Gallery' },
+      { to: '/gallery', label: 'Image Gallery' },
     ],
   },
   { to: '/leadership', label: 'Leadership' },
