@@ -5,9 +5,12 @@ import { useEffect, useState } from 'react';
  * Drop additional project photos into /public/images/gallery and add them here.
  */
 const IMAGES = [
+  { img: '/images/gallery/substation.jpg', caption: 'Ground-mounted solar array' },
   { img: '/images/gallery/solar.jpg', caption: 'Solar power plant' },
+  { img: '/images/gallery/panels2.jpg', caption: 'Solar panel installation' },
   { img: '/images/gallery/windfarm.jpg', caption: 'Aerial view of a solar farm' },
-  { img: '/images/gallery/wind.jpg', caption: 'Wind turbines' },
+  { img: '/images/gallery/wind.jpg', caption: 'Wind turbines at sunset' },
+  { img: '/images/gallery/turbineclose.jpg', caption: 'Wind farm' },
   { img: '/images/gallery/powerlines.jpg', caption: 'Transmission lines' },
   { img: '/images/gallery/solarfarm.jpg', caption: 'Rooftop solar installation' },
 ];

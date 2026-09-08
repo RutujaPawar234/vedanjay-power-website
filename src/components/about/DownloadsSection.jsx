@@ -15,12 +15,17 @@ export default function DownloadsSection() {
               <ul className="downloads-list">
                 {g.items.map((d) => (
                   <li key={d.url}>
-                    <a className="download-row" href={d.url} target="_blank" rel="noopener noreferrer">
+                    <div className="download-row">
                       <span className="download-row__name">{d.name}</span>
-                      <span className="download-row__act">
-                        <i className="bi bi-box-arrow-up-right" aria-hidden="true" /> Open
+                      <span className="download-row__acts">
+                        <a className="download-row__act" href={d.url} target="_blank" rel="noopener noreferrer" aria-label={`View ${d.name}`}>
+                          <i className="bi bi-eye" aria-hidden="true" /> View
+                        </a>
+                        <a className="download-row__act download-row__act--dl" href={d.url} download aria-label={`Download ${d.name}`}>
+                          <i className="bi bi-download" aria-hidden="true" /> Download
+                        </a>
                       </span>
-                    </a>
+                    </div>
                   </li>
                 ))}
               </ul>

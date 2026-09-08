@@ -411,8 +411,8 @@
 }
 .award-cert:hover { transform: translateY(-5px); box-shadow: var(--vp-shadow-md); border-color: var(--vp-gold-500); }
 .award-cert__media {
-  position: relative; height: 150px;
-  display: grid; place-items: center; padding: 0.6rem;
+  position: relative; height: 120px;
+  display: grid; place-items: center; padding: 0.5rem;
   background: linear-gradient(160deg, #ffffff, #f2f6f0);
   border-bottom: 1px solid var(--vp-line);
 }
@@ -449,3 +449,23 @@
 /* Downloads groups */
 .downloads-groups { max-width: 900px; margin: 2rem auto 0; display: grid; gap: 1.6rem; }
 .downloads-group__title { font-size: 1.12rem; color: var(--vp-green-800); margin: 0 0 0.7rem; }
+
+/* Smaller heading on plain (Awards/Downloads/Services) heroes */
+.about-hero--plain .about-hero__title { font-size: clamp(1.5rem, 2.7vw, 2.1rem); }
+.about-hero--plain { min-height: 34vh; }
+
+/* Download row: two actions (View + Download) */
+.download-row__acts { display: inline-flex; align-items: center; gap: 0.5rem; flex: 0 0 auto; }
+.download-row__act {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-weight: 700; font-size: 0.86rem; white-space: nowrap;
+  padding: 0.35rem 0.7rem; border-radius: 8px; text-decoration: none;
+  color: var(--vp-green-700); border: 1px solid var(--vp-line);
+  transition: background 0.2s var(--vp-ease), color 0.2s var(--vp-ease), border-color 0.2s var(--vp-ease);
+}
+.download-row__act:hover { background: var(--vp-mist); }
+.download-row__act--dl { background: var(--vp-green-600); border-color: var(--vp-green-600); color: #fff; }
+.download-row__act--dl:hover { background: var(--vp-green-700); border-color: var(--vp-green-700); color: #fff; }
+@media (max-width: 480px) {
+  .download-row { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+}
