@@ -97,3 +97,12 @@
 @media (prefers-reduced-motion: reduce) {
   .chatmsg__typing span { animation: none; }
 }
+
+/* Typewriter caret for bot messages */
+.chatmsg__caret {
+  display: inline-block; width: 2px; height: 1em; margin-left: 1px;
+  vertical-align: text-bottom; background: currentColor; opacity: 0.7;
+  animation: vp-chat-caret 0.9s steps(1) infinite;
+}
+@keyframes vp-chat-caret { 0%, 50% { opacity: 0.7; } 50.01%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .chatmsg__caret { display: none; } }

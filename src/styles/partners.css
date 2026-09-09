@@ -90,8 +90,7 @@
   -webkit-overflow-scrolling: touch;
 }
 .partner-scroll .partner-card { scroll-snap-align: center; }
-.partner-scroll::-webkit-scrollbar { height: 8px; }
-.partner-scroll::-webkit-scrollbar-track { background: transparent; }
-.partner-scroll::-webkit-scrollbar-thumb { background: var(--vp-line); border-radius: 999px; }
-.partner-scroll::-webkit-scrollbar-thumb:hover { background: var(--vp-green-500); }
+/* Hidden scrollbar — still scrollable by swipe / drag / wheel */
+.partner-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.partner-scroll::-webkit-scrollbar { width: 0; height: 0; display: none; }
 .partner-scroll:focus-visible { outline: 2px solid var(--vp-teal-500); outline-offset: 3px; border-radius: 12px; }

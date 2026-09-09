@@ -16,7 +16,8 @@ function loadMessages() {
     const raw = sessionStorage.getItem(STORE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length) return parsed;
+      // Drop the typewriter flag so restored history shows instantly.
+      if (Array.isArray(parsed) && parsed.length) return parsed.map(({ animate, ...m }) => m);
     }
   } catch { /* ignore */ }
   return seed();
@@ -38,7 +39,7 @@ export default function Chatbot() {
     setTyping(true);
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     timer.current = setTimeout(() => {
-      setMessages((m) => [...m, { id: uid(), from: 'bot', text: resp.text, cta: resp.cta, time: now() }]);
+      setMessages((m) => [...m, { id: uid(), from: 'bot', text: resp.text, cta: resp.cta, time: now(), animate: true }]);
       setTyping(false);
     }, reduced ? 150 : 650);
   }, []);
